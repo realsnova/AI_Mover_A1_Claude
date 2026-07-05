@@ -1,0 +1,28 @@
+# 禁止搜尋引擎索引此專案（私人教學用途）
+User-agent: *
+Disallow: /
+
+# 特別針對常見搜尋引擎
+User-agent: Googlebot
+Disallow: /
+
+User-agent: Bingbot
+Disallow: /
+
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: Yandexbot
+Disallow: /
+
+User-agent: Slurp
+Disallow: /
+
+User-agent: DuckDuckBot
+Disallow: /
+
+# 禁止所有爬蟲
+Disallow: /
+
+# 暫存
+Sitemap: none
