@@ -1,0 +1,14 @@
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+*.swp
+
+# Temp/scratch files from development sessions
+_assets_tmp/
+_debug_*.txt
+_bgm_b64.txt
+*.b64.txt

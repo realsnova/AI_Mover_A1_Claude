@@ -1,0 +1,396 @@
+﻿id,單字,中文,主題,詞性,例句,例句中文,emoji,干擾字1,干擾字2,干擾字3
+ani-001,bat,蝙蝠,animals,n,Bats fly at night.,蝙蝠在晚上飛。,🦇,whale,snail,panda
+ani-002,cage,籠子,animals,n,The parrot is in a cage.,鸚鵡在籠子裡。,,roof,net,map
+ani-003,dolphin,海豚,animals,n,Dolphins jump out of the water.,海豚跳出水面。,🐬,shark,whale,penguin
+ani-004,feed,餵,animals,v,I feed my rabbit every day.,我每天餵我的兔子。,🥣,wash,carry,catch
+ani-005,fly,蒼蠅,animals,n,There is a fly in my soup!,我的湯裡有一隻蒼蠅！,,snail,kitten,parrot
+ani-006,kangaroo,袋鼠,animals,n,Kangaroos can hop very well.,袋鼠很會跳。,🦘,panda,lion,rabbit
+ani-007,kitten,小貓,animals,n,The kitten is playing with a ball.,小貓在玩球。,🐱,puppy,rabbit,parrot
+ani-008,lion,獅子,animals,n,The lion is sleeping under the tree.,獅子在樹下睡覺。,🦁,panda,kangaroo,shark
+ani-009,panda,貓熊,animals,n,Pandas eat leaves all day.,貓熊整天吃葉子。,🐼,lion,kangaroo,whale
+ani-010,parrot,鸚鵡,animals,n,My parrot can say my name.,我的鸚鵡會說我的名字。,🦜,penguin,kitten,fly
+ani-011,penguin,企鵝,animals,n,Penguins live where it is cold.,企鵝住在很冷的地方。,🐧,parrot,dolphin,snail
+ani-012,puppy,小狗,animals,n,The puppy likes to run and jump.,小狗喜歡跑跑跳跳。,🐶,kitten,rabbit,lion
+ani-013,rabbit,兔子,animals,n,The rabbit is eating a carrot.,兔子在吃紅蘿蔔。,🐰,kitten,puppy,kangaroo
+ani-014,shark,鯊魚,animals,n,Sharks have a lot of teeth.,鯊魚有很多牙齒。,🦈,whale,dolphin,penguin
+ani-015,snail,蝸牛,animals,n,A snail is very slow.,蝸牛非常慢。,🐌,fly,bat,kitten
+ani-016,whale,鯨魚,animals,n,A whale is bigger than a shark.,鯨魚比鯊魚大。,🐳,dolphin,shark,panda
+foo-001,bottle,瓶子,food,n,There is a bottle of water on the table.,桌上有一瓶水。,🍼,glass,cup,bowl
+foo-002,bowl,碗,food,n,I eat noodles from a bowl.,我用碗吃麵。,🥣,plate,cup,bottle
+foo-003,cheese,起司,food,n,Mice love eating cheese.,老鼠愛吃起司。,🧀,sauce,soup,salad
+foo-004,coffee,咖啡,food,n,Dad drinks coffee every morning.,爸爸每天早上喝咖啡。,☕,tea,milkshake,soup
+foo-005,cook,廚師；煮,food,n+v,My mum is a good cook.,我媽媽是很棒的廚師。,🍳,doctor,driver,farmer
+foo-006,cup,杯子,food,n,"A cup of tea, please.",請給我一杯茶。,,glass,bowl,plate
+foo-007,glass,玻璃杯,food,n,Can I have a glass of milk?,可以給我一杯牛奶嗎？,🥛,cup,bottle,plate
+foo-008,hungry,餓的,food,adj,I'm hungry. Let's eat!,我餓了，我們吃飯吧！,😋,thirsty,tired,sweet
+foo-009,milkshake,奶昔,food,n,This banana milkshake is sweet.,這杯香蕉奶昔很甜。,🥤,coffee,tea,sauce
+foo-010,noodles,麵,food,n,I had noodles for lunch.,我午餐吃了麵。,🍜,pasta,soup,salad
+foo-011,pancake,鬆餅,food,n,We make pancakes on Sunday.,我們星期天做鬆餅。,🥞,sandwich,cheese,noodles
+foo-012,pasta,義大利麵,food,n,Pasta with sauce is yummy.,加醬汁的義大利麵很好吃。,🍝,noodles,soup,pancake
+foo-013,picnic,野餐,food,n,Let's have a picnic by the lake.,我們去湖邊野餐吧。,🧺,party,trip,holiday
+foo-014,plate,盤子,food,n,Put the sandwich on the plate.,把三明治放在盤子上。,🍽️,bowl,cup,glass
+foo-015,salad,沙拉,food,n,Salad is good for you.,沙拉對你的身體很好。,🥗,soup,cheese,pasta
+foo-016,sandwich,三明治,food,n,I made a cheese sandwich.,我做了一個起司三明治。,🥪,pancake,salad,noodles
+foo-017,sauce,醬汁,food,n,I like tomato sauce on pasta.,我喜歡義大利麵加番茄醬汁。,🥫,soup,cheese,tea
+foo-018,soup,湯,food,n,The soup is too hot.,這碗湯太燙了。,🍲,sauce,salad,coffee
+foo-019,sweet,甜的,food,adj,This milkshake is very sweet.,這杯奶昔非常甜。,🍬,hungry,thirsty,cold
+foo-020,tea,茶,food,n,Grandma drinks tea in the afternoon.,奶奶下午喝茶。,🍵,coffee,soup,milkshake
+foo-021,thirsty,渴的,food,adj,I'm thirsty. I need water.,我口渴了，我需要水。,💧,hungry,tired,hot
+foo-022,vegetable,蔬菜,food,n,Eat your vegetables every day.,每天都要吃蔬菜。,🥦,salad,cheese,pasta
+bod-001,back,背；後面,body,n,My back hurts.,我的背在痛。,,neck,shoulder,stomach
+bod-002,beard,鬍子,body,n,My uncle has a black beard.,我叔叔有黑色的鬍子。,🧔,moustache,neck,tooth
+bod-003,better,更好的,body,adj+adv,"I was sick, but now I'm better.",我之前生病了，但現在好多了。,,worse,fine,bad
+bod-004,blonde,金髮的,body,adj,She has blonde hair.,她有一頭金髮。,👱,curly,fair,thin
+bod-005,cold,感冒；冷的,body,n+adj,I have a cold and a cough.,我感冒又咳嗽。,🤧,cough,headache,earache
+bod-006,cough,咳嗽,body,n,That's a bad cough!,你咳得好嚴重！,😷,cold,toothache,earache
+bod-007,curly,捲的,body,adj,He has curly hair.,他有一頭捲髮。,👨‍🦱,blonde,thin,fat
+bod-008,dentist,牙醫,body,n,The dentist looks at my teeth.,牙醫檢查我的牙齒。,🦷,doctor,nurse,farmer
+bod-009,doctor,醫生,body,n,The doctor helps sick people.,醫生幫助生病的人。,👩‍⚕️,nurse,dentist,driver
+bod-010,earache,耳朵痛,body,n,I can't hear well. I have an earache.,我聽不清楚，我耳朵痛。,👂,headache,toothache,cough
+bod-011,fat,胖的,body,adj,That cat is very fat.,那隻貓好胖。,,thin,tall,strong
+bod-012,fine,很好的,body,adj,"I'm fine, thank you.",我很好，謝謝你。,👌,well,better,sick
+bod-013,headache,頭痛,body,n,I have a headache. I need to sleep.,我頭痛，我需要睡覺。,🤕,earache,stomach-ache,cold
+bod-014,hospital,醫院,body,n,The nurse works at the hospital.,護理師在醫院工作。,🏥,library,station,supermarket
+bod-015,hurt,痛；受傷,body,v,My leg hurts.,我的腿在痛。,🤕,cry,fall,help
+bod-016,ill,生病的,body,adj,He is ill and in bed.,他生病躺在床上。,🤒,tired,hungry,busy
+bod-017,matter,事情；問題,body,n,What's the matter?,怎麼了？,,mistake,idea,difference
+bod-018,moustache,八字鬍,body,n,The clown has a funny moustache.,小丑有好笑的八字鬍。,👨,beard,neck,shoulder
+bod-019,neck,脖子,body,n,A giraffe has a long neck.,長頸鹿有長長的脖子。,🦒,back,shoulder,stomach
+bod-020,nurse,護理師,body,n,The nurse helps the doctor.,護理師協助醫生。,💉,doctor,dentist,grown-up
+bod-021,shoulder,肩膀,body,n,Put the parrot on my shoulder.,把鸚鵡放在我的肩膀上。,,neck,back,stomach
+bod-022,sick,生病的,body,adj,I feel sick. I can't go to school.,我覺得不舒服，不能去上學。,🤒,tired,hungry,naughty
+bod-023,stomach,肚子,body,n,My stomach is full.,我的肚子好飽。,,neck,shoulder,back
+bod-024,stomach-ache,肚子痛,body,n,I ate too much. I have a stomach-ache.,我吃太多了，肚子好痛。,,headache,toothache,earache
+bod-025,strong,強壯的,body,adj,Elephants are very strong.,大象非常強壯。,💪,weak,tall,fat
+bod-026,temperature,發燒；體溫,body,n,She has a temperature and must stay in bed.,她發燒了，必須待在床上。,🌡️,cough,cold,headache
+bod-027,thin,瘦的,body,adj,My grandpa is tall and thin.,我爺爺又高又瘦。,,fat,strong,little
+bod-028,tired,累的,body,adj,I'm tired. I want to sleep.,我好累，我想睡覺。,😴,hungry,thirsty,afraid
+bod-029,tooth / teeth,牙齒,body,n,Brush your teeth every day.,每天都要刷牙。,🦷,neck,beard,moustache
+bod-030,toothache,牙痛,body,n,I have a toothache. I must see the dentist.,我牙痛，必須去看牙醫。,😖,earache,headache,stomach-ache
+bod-031,toothbrush,牙刷,body,n,My toothbrush is red.,我的牙刷是紅色的。,,toothpaste,towel,bottle
+bod-032,toothpaste,牙膏,body,n,Put toothpaste on your toothbrush.,把牙膏擠在牙刷上。,,toothbrush,towel,blanket
+bod-033,weak,虛弱的,body,adj,I was ill last week and I'm still weak.,我上週生病，現在還很虛弱。,,strong,tired,thin
+bod-034,well,健康的；好地,body,adj+adv,I don't feel well today.,我今天覺得不太舒服。,,fine,better,bad
+bod-035,worse,更糟的,body,adj+adv,My cough is worse today.,我的咳嗽今天更嚴重了。,,better,worst,bad
+bod-036,worst,最糟的,body,adj+adv,That was the worst day!,那是最糟的一天！,,worse,best,bad
+sch-001,app,應用程式,school,n,This app helps me learn English.,這個應用程式幫我學英文。,📱,website,e-book,video
+sch-002,break,下課；休息,school,n,Let's play in the break.,下課時間我們去玩吧。,⏰,homework,practice,party
+sch-003,CD,光碟,school,n,Listen to the CD and sing.,聽光碟然後唱歌。,💿,DVD,laptop,video
+sch-004,circle,圓形,school,n,Draw a circle on the paper.,在紙上畫一個圓形。,⭕,square,shape,star
+sch-005,difference,不同之處,school,n,Find the differences in the two pictures.,找出兩張圖的不同之處。,,mistake,idea,shape
+sch-006,different,不同的,school,adj,The two hats are different.,這兩頂帽子不一樣。,,difficult,easy,wrong
+sch-007,difficult,困難的,school,adj,This question is very difficult.,這個問題非常難。,,easy,different,boring
+sch-008,DVD,影音光碟,school,n,We watched a DVD about whales.,我們看了一片關於鯨魚的DVD。,📀,CD,video,e-book
+sch-009,easy,簡單的,school,adj,That's easy! I know the answer.,那很簡單！我知道答案。,,difficult,boring,exciting
+sch-010,e-book,電子書,school,n,I read an e-book on the laptop.,我在筆電上讀電子書。,📖,comic,app,website
+sch-011,email,電子郵件,school,n+v,Send an email to your teacher.,寄一封電子郵件給你的老師。,📧,message,text,website
+sch-012,homework,回家作業,school,n,I do my homework after school.,我放學後寫作業。,📝,break,practice,mistake
+sch-013,idea,主意,school,n,What a good idea!,真是個好主意！,💡,mistake,difference,matter
+sch-014,internet,網路,school,n,We look for pictures on the internet.,我們在網路上找圖片。,🌐,website,email,laptop
+sch-015,laptop,筆記型電腦,school,n,Dad works on his laptop.,爸爸用筆電工作。,💻,machine,internet,DVD
+sch-016,machine,機器,school,n,This machine makes noodles.,這台機器會做麵條。,⚙️,laptop,model,tractor
+sch-017,mean,意思是,school,v,What does this word mean?,這個字是什麼意思？,,think,need,teach
+sch-018,message,訊息,school,n,Mum sent me a message.,媽媽傳了一則訊息給我。,💬,email,text,idea
+sch-019,mistake,錯誤,school,n,I made two mistakes in the test.,我考試錯了兩題。,❌,difference,idea,matter
+sch-020,model,模型,school,n,He made a model plane.,他做了一架模型飛機。,✈️,machine,present,shape
+sch-021,practice,練習（名詞）,school,n,Piano practice is at four o'clock.,鋼琴練習在四點鐘。,🎹,homework,break,work
+sch-022,practise,練習（動詞）,school,v,I practise English every day.,我每天練習英文。,,teach,think,mean
+sch-023,shape,形狀,school,n,A circle is a shape.,圓形是一種形狀。,🔷,circle,square,star
+sch-024,square,正方形,school,n+adj,A square has four sides.,正方形有四個邊。,🟥,circle,shape,top
+sch-025,teach,教,school,v,Miss Lin teaches us English.,林老師教我們英文。,👩‍🏫,mean,help,think
+sch-026,text,簡訊；傳簡訊,school,n+v,Dad texts me after school.,放學後爸爸傳簡訊給我。,📲,email,message,call
+sch-027,think,想；認為,school,v,I think this game is exciting.,我覺得這個遊戲很刺激。,🤔,mean,need,dream
+sch-028,video,影片,school,n+v,We watched a funny video.,我們看了一部好笑的影片。,📹,DVD,film,website
+sch-029,website,網站,school,n,This website has fun games.,這個網站有好玩的遊戲。,🖥️,internet,app,email
+spo-001,catch,接住；搭（車）,sports,v,Catch the ball!,接住球！,🤲,kick,drop,carry
+spo-002,climb,爬,sports,v,Monkeys climb trees.,猴子會爬樹。,🧗,hop,skip,swim
+spo-003,dance,跳舞,sports,n+v,She dances at the party.,她在派對上跳舞。,💃,skip,hop,laugh
+spo-004,fish,釣魚,sports,v,Grandpa fishes at the lake.,爺爺在湖邊釣魚。,🎣,sail,swim,skate
+spo-005,goal,進球；球門,sports,n,What a goal! We won!,好球！我們贏了！,🥅,net,score,player
+spo-006,helmet,安全帽,sports,n,Wear a helmet when you ride your bike.,騎腳踏車時要戴安全帽。,⛑️,coat,scarf,net
+spo-007,hop,單腳跳,sports,v,Can you hop on one leg?,你會單腳跳嗎？,🦘,skip,climb,walk
+spo-008,ice,冰,sports,n,There is ice on the lake in winter.,冬天湖面上有冰。,🧊,snow,rain,wind
+spo-009,ice skates,冰刀鞋,sports,n,I got new ice skates for my birthday.,我生日得到新的冰刀鞋。,⛸️,roller skates,helmet,swimsuit
+spo-010,ice skating,溜冰,sports,n,We go ice skating in winter.,我們冬天去溜冰。,⛸️,roller skating,swimming,fishing
+spo-011,kick,踢,sports,n+v,Kick the ball to me!,把球踢給我！,⚽,catch,hop,carry
+spo-012,net,網子,sports,n,The ball is in the net!,球進網了！,🕸️,goal,cage,map
+spo-013,player,球員；選手,sports,n,He is the best player in our team.,他是我們隊上最棒的球員。,🏃,driver,farmer,clown
+spo-014,ride,騎,sports,n+v,I ride my bike to school.,我騎腳踏車上學。,🚴,drive,walk,climb
+spo-015,roller skates,直排輪鞋,sports,n,Her roller skates are pink.,她的直排輪鞋是粉紅色的。,,ice skates,helmet,ticket
+spo-016,roller skating,溜直排輪,sports,n,Roller skating is fun!,溜直排輪好好玩！,,ice skating,swimming,fishing
+spo-017,sail,航行；開船,sports,n+v,We sailed the boat on the lake.,我們在湖上開船。,⛵,swim,fish,ride
+spo-018,score,得分,sports,v,He scored two goals!,他踢進了兩球！,🎯,kick,catch,lose
+spo-019,skate,溜冰,sports,n+v,I can skate very quickly.,我溜冰溜得很快。,⛸️,swim,climb,dance
+spo-020,skip,跳繩；蹦跳,sports,v,The girls are skipping in the playground.,女孩們在操場跳繩。,,hop,dance,climb
+spo-021,swim,游泳,sports,n+v,Fish swim in the river.,魚在河裡游泳。,🏊,sail,skate,walk
+spo-022,swimming pool,游泳池,sports,n,The hotel has a big swimming pool.,飯店有一個大游泳池。,🏊,sports centre,lake,shower
+spo-023,swimsuit,泳衣,sports,n,Put on your swimsuit. Let's swim!,穿上泳衣，我們去游泳！,🩱,sweater,coat,scarf
+spo-024,walk,走路；散步,sports,n+v,We walk to school every day.,我們每天走路上學。,🚶,ride,hop,climb
+hom-001,address,地址,home_family,n,What's your address?,你家的地址是什麼？,🏠,road,town,place
+hom-002,asleep,睡著的,home_family,adj,The kitten is asleep on the bed.,小貓在床上睡著了。,💤,awake,tired,quiet
+hom-003,aunt,阿姨；姑姑,home_family,n,My aunt is my mum's sister.,阿姨是媽媽的姊妹。,👩,uncle,parent,daughter
+hom-004,awake,醒著的,home_family,adj,The baby is awake and crying.,寶寶醒了，正在哭。,👀,asleep,tired,ill
+hom-005,balcony,陽台,home_family,n,You can see the sea from the balcony.,從陽台可以看到海。,,basement,roof,floor
+hom-006,basement,地下室,home_family,n,The toy boxes are in the basement.,玩具箱在地下室。,,balcony,roof,stairs
+hom-007,blanket,毯子,home_family,n,This blanket keeps me warm.,這條毯子讓我很溫暖。,🛏️,towel,coat,scarf
+hom-008,coat,外套,home_family,n,Put on your coat. It's cold.,穿上外套，天氣很冷。,🧥,sweater,scarf,swimsuit
+hom-009,daughter,女兒,home_family,n,Mrs Lin has a son and a daughter.,林太太有一個兒子和一個女兒。,👧,son,aunt,granddaughter
+hom-010,downstairs,樓下,home_family,adv+n,The kitchen is downstairs.,廚房在樓下。,⬇️,upstairs,outside,inside
+hom-011,dream,夢；作夢,home_family,n+v,I had a funny dream last night.,我昨晚做了一個好笑的夢。,💭,idea,message,mistake
+hom-012,floor,樓層；地板,home_family,n,Our hotel room is on the third floor.,我們的飯店房間在三樓。,,roof,stairs,balcony
+hom-013,get dressed,穿衣服,home_family,v,Get dressed! We must go to school.,快穿衣服！我們要去上學了。,👕,get up,get undressed,wake up
+hom-014,get undressed,脫衣服,home_family,v,Get undressed and have a shower.,脫掉衣服去洗澡。,,get dressed,get up,put on
+hom-015,get up,起床,home_family,v,I get up at seven o'clock.,我七點鐘起床。,🌅,get dressed,wake up,get on
+hom-016,granddaughter,孫女,home_family,n,Grandma loves her granddaughter.,奶奶很愛她的孫女。,👧,grandson,daughter,aunt
+hom-017,grandparent,祖父母,home_family,n,My grandparents live in the countryside.,我的祖父母住在鄉下。,👴,parent,uncle,grown-up
+hom-018,grandson,孫子,home_family,n,Their grandson is nine years old.,他們的孫子九歲。,👦,granddaughter,son,uncle
+hom-019,grown-up,大人,home_family,n,Ask a grown-up to help you.,請大人幫忙你。,🧑,parent,driver,clown
+hom-020,pair,一雙；一副,home_family,n,I bought a new pair of shoes.,我買了一雙新鞋。,👟,glass,bottle,cup
+hom-021,parent,父母,home_family,n,My parents work in the city.,我的父母在城市工作。,👪,grandparent,aunt,grown-up
+hom-022,put on,穿上,home_family,v,Put on your helmet.,戴上你的安全帽。,,take off,get up,carry
+hom-023,roof,屋頂,home_family,n,The cat is sitting on the roof.,貓坐在屋頂上。,🏠,floor,balcony,basement
+hom-024,scarf,圍巾,home_family,n,Wear a scarf in winter.,冬天要圍圍巾。,🧣,coat,sweater,blanket
+hom-025,seat,座位,home_family,n,This seat is next to the window.,這個座位在窗戶旁邊。,💺,place,stairs,floor
+hom-026,shower,淋浴,home_family,n,I take a shower every evening.,我每天晚上洗澡。,🚿,wash,towel,pool
+hom-027,son,兒子,home_family,n,Their son plays football well.,他們的兒子足球踢得很好。,👦,daughter,grandson,uncle
+hom-028,stairs,樓梯,home_family,n,Go up the stairs to the second floor.,走樓梯上二樓。,,floor,lift,balcony
+hom-029,sweater,毛衣,home_family,n,This blue sweater is warm.,這件藍色毛衣很保暖。,,coat,scarf,swimsuit
+hom-030,take off,脫掉,home_family,v,Take off your wet coat.,脫掉你濕濕的外套。,,put on,get dressed,drop
+hom-031,towel,毛巾,home_family,n,Dry your hair with a towel.,用毛巾把頭髮擦乾。,,blanket,toothbrush,scarf
+hom-032,uncle,叔叔；舅舅,home_family,n,Uncle Charlie has a hotel.,查理叔叔有一間飯店。,👨,aunt,parent,grandson
+hom-033,upstairs,樓上,home_family,adv+n,My bedroom is upstairs.,我的房間在樓上。,⬆️,downstairs,inside,outside
+hom-034,wake up,醒來,home_family,v,Wake up! It's eight o'clock!,快醒醒！八點了！,⏰,get up,get dressed,take off
+hom-035,wash,洗,home_family,n+v,Wash your hands before dinner.,吃晚餐前要洗手。,🧼,dry,feed,carry
+wea-001,cloud,雲,weather_world,n,Look at that big white cloud.,你看那朵大大的白雲。,☁️,rain,wind,sky
+wea-002,cloudy,多雲的,weather_world,adj,It's cloudy today.,今天是多雲的天氣。,🌥️,sunny,windy,wet
+wea-003,country,國家；鄉間,weather_world,n,Which country do you want to visit?,你想去哪個國家？,,city,world,town
+wea-004,countryside,鄉下,weather_world,n,Grandpa lives in the countryside.,爺爺住在鄉下。,🌄,city,jungle,town
+wea-005,dry,乾的；弄乾,weather_world,adj+v,The towel is dry now.,毛巾現在乾了。,,wet,hot,cold
+wea-006,field,田野,weather_world,n,The tractor is in the field.,牽引機在田裡。,🌾,forest,grass,farm
+wea-007,forest,森林,weather_world,n,Many trees grow in a forest.,森林裡長著很多樹。,🌲,jungle,field,mountain
+wea-008,grass,草,weather_world,n,The rabbit is eating grass.,兔子在吃草。,🌱,leaf,plant,ground
+wea-009,ground,地面,weather_world,n,The leaves fall to the ground.,葉子掉到地上。,,floor,grass,sky
+wea-010,grow,生長；種植,weather_world,v,Plants need water to grow.,植物需要水才能生長。,🌱,plant,move,change
+wea-011,hot,熱的,weather_world,adj,It's very hot today.,今天非常熱。,🥵,cold,wet,windy
+wea-012,island,島,weather_world,n,There is treasure on the island.,島上有寶藏。,🏝️,lake,mountain,river
+wea-013,jungle,叢林,weather_world,n,Parrots live in the jungle.,鸚鵡住在叢林裡。,🌴,forest,island,field
+wea-014,lake,湖,weather_world,n,We sailed on the lake.,我們在湖上開船。,🏞️,river,waterfall,island
+wea-015,leaf / leaves,葉子,weather_world,n,The leaves are green in spring.,春天的葉子是綠色的。,🍃,grass,plant,rock
+wea-016,moon,月亮,weather_world,n,The moon is round tonight.,今晚的月亮圓圓的。,🌙,star,sky,cloud
+wea-017,mountain,山,weather_world,n,We climbed the mountain.,我們爬上了那座山。,⛰️,island,waterfall,forest
+wea-018,plant,植物；種植,weather_world,n+v,Water the plants every day.,每天幫植物澆水。,🌿,grass,leaf,vegetable
+wea-019,rain,雨；下雨,weather_world,n+v,Take an umbrella. It's raining.,帶把傘，下雨了。,🌧️,snow,wind,cloud
+wea-020,rainbow,彩虹,weather_world,n,Look! A rainbow after the rain!,你看！雨後出現彩虹！,🌈,cloud,sky,moon
+wea-021,river,河,weather_world,n,Fish swim in the river.,魚在河裡游。,🏞️,lake,waterfall,road
+wea-022,rock,岩石,weather_world,n,The snail is on a big rock.,蝸牛在一塊大岩石上。,,ground,mountain,leaf
+wea-023,sky,天空,weather_world,n,The sky is blue today.,今天的天空很藍。,🌌,cloud,moon,ground
+wea-024,snow,雪；下雪,weather_world,n+v,We play in the snow in winter.,冬天我們在雪地裡玩。,❄️,rain,ice,wind
+wea-025,sunny,晴朗的,weather_world,adj,It's sunny. Let's have a picnic!,天氣晴朗，我們去野餐吧！,☀️,cloudy,windy,wet
+wea-026,water,澆水,weather_world,v,I water the plants every morning.,我每天早上幫植物澆水。,💧,grow,wash,feed
+wea-027,waterfall,瀑布,weather_world,n,The waterfall is behind the mountain.,瀑布在山的後面。,,river,lake,wave
+wea-028,wave,海浪,weather_world,n,The waves are big today.,今天的海浪很大。,🌊,wind,rain,lake
+wea-029,weather,天氣,weather_world,n,What's the weather like today?,今天天氣如何？,🌦️,wind,world,sky
+wea-030,wet,濕的,weather_world,adj,My coat is wet from the rain.,我的外套被雨淋濕了。,💦,dry,cold,windy
+wea-031,wind,風,weather_world,n,The wind is moving the leaves.,風吹動著葉子。,💨,rain,snow,cloud
+wea-032,windy,有風的,weather_world,adj,It's too windy for a picnic.,風太大了，不適合野餐。,💨,cloudy,sunny,wet
+wea-033,world,世界,weather_world,n,There is a map of the world on the wall.,牆上有一張世界地圖。,🌍,country,city,moon
+pla-001,bus station,公車總站,places_transport,n,The bus station is near the market.,公車總站在市場附近。,🚌,bus stop,station,car park
+pla-002,bus stop,公車站牌,places_transport,n,Wait at the bus stop.,在公車站牌等車。,🚏,bus station,station,road
+pla-003,build,建造,places_transport,v,They are building a new library.,他們正在蓋新的圖書館。,🏗️,fix,buy,grow
+pla-004,building,建築物,places_transport,n,That tall building is a hospital.,那棟高樓是醫院。,🏢,station,supermarket,cinema
+pla-005,buy,買,places_transport,v,I want to buy a comic book.,我想買一本漫畫書。,🛒,shop,carry,bring
+pla-006,café,咖啡廳,places_transport,n,We had milkshakes at the café.,我們在咖啡廳喝奶昔。,🍰,cinema,market,library
+pla-007,car park,停車場,places_transport,n,Dad put the car in the car park.,爸爸把車停在停車場。,🅿️,bus station,market,road
+pla-008,centre,中心,places_transport,n,The shop is in the centre of town.,那家店在市中心。,,square,station,market
+pla-009,cinema,電影院,places_transport,n,We watched a film at the cinema.,我們在電影院看了一部電影。,🎬,library,café,market
+pla-010,city,城市,places_transport,n,Taipei is a big city.,台北是一個大城市。,🏙️,town,village,country
+pla-011,drive,開車,places_transport,n+v,My mum drives me to school.,媽媽開車送我上學。,🚗,ride,walk,travel
+pla-012,driver,司機,places_transport,n,The bus driver says hello.,公車司機跟我們打招呼。,🚌,player,farmer,nurse
+pla-013,farm,農場,places_transport,n,There are many animals on the farm.,農場裡有很多動物。,🐄,field,forest,market
+pla-014,farmer,農夫,places_transport,n,The farmer feeds the animals.,農夫餵動物吃東西。,👨‍🌾,driver,doctor,cook
+pla-015,get off,下車,places_transport,v,Get off the bus at the school.,在學校那站下公車。,,get on,get up,take off
+pla-016,get on,上車,places_transport,v,We got on the bus at the station.,我們在車站上了公車。,,get off,get up,put on
+pla-017,go shopping,去購物,places_transport,v,Let's go shopping at the supermarket.,我們去超市買東西吧。,🛍️,get on,dress up,get up
+pla-018,holiday,假期,places_transport,n,We went to the beach for our holiday.,我們假期去了海邊。,🏖️,trip,weekend,party
+pla-019,library,圖書館,places_transport,n,Be quiet in the library.,在圖書館要安靜。,📚,cinema,hospital,supermarket
+pla-020,lift / elevator,電梯,places_transport,n,Take the lift to the fourth floor.,搭電梯到四樓。,,stairs,seat,shower
+pla-021,map,地圖,places_transport,n,Look at the map to find the road.,看地圖找路。,🗺️,ticket,address,world
+pla-022,market,市場,places_transport,n,We buy vegetables at the market.,我們在市場買蔬菜。,🍎,supermarket,café,shop
+pla-023,place,地方,places_transport,n,This is a good place for a picnic.,這是野餐的好地方。,📍,centre,square,address
+pla-024,pool,游泳池,places_transport,n,The pool at the hotel is huge.,飯店的游泳池超大。,🏊,lake,shower,river
+pla-025,road,路,places_transport,n,Don't play on the road.,不要在馬路上玩。,🛣️,square,ground,town
+pla-026,shop,商店；購物,places_transport,n+v,The toy shop is opposite the café.,玩具店在咖啡廳對面。,🏬,market,café,cinema
+pla-027,shopping,購物,places_transport,n,We did our shopping at the market.,我們在市場買完了東西。,🛍️,homework,practice,work
+pla-028,shopping centre,購物中心,places_transport,n,The shopping centre is always busy.,購物中心總是很熱鬧。,🏬,sports centre,supermarket,market
+pla-029,sports centre,運動中心,places_transport,n,I swim at the sports centre.,我在運動中心游泳。,🏟️,shopping centre,swimming pool,station
+pla-030,station,車站,places_transport,n,The train is at the station.,火車在車站。,🚉,bus stop,market,centre
+pla-031,straight,直的；直直地,places_transport,adj+adv,Go straight and then turn left.,直走然後左轉。,➡️,slow,round,quick
+pla-032,supermarket,超市,places_transport,n,Mum buys cheese at the supermarket.,媽媽在超市買起司。,🏪,market,library,café
+pla-033,ticket,票,places_transport,n,Show your ticket to the driver.,把票拿給司機看。,🎫,map,message,present
+pla-034,town,城鎮,places_transport,n,Our town has a funfair.,我們鎮上有遊樂園。,🏘️,city,village,country
+pla-035,town / city centre,市中心,places_transport,n,The library is in the town centre.,圖書館在市中心。,,bus station,market,village
+pla-036,tractor,牽引機,places_transport,n,The farmer drives a green tractor.,農夫開著綠色的牽引機。,🚜,bus,train,boat
+pla-037,travel,旅行,places_transport,v,We travelled by train last summer.,去年夏天我們搭火車旅行。,✈️,drive,ride,move
+pla-038,trip,旅程,places_transport,n,Our school trip is on Friday.,我們的校外教學在星期五。,🧳,holiday,picnic,party
+pla-039,village,村莊,places_transport,n,My grandparents live in a small village.,我的祖父母住在小村莊。,🏡,town,city,island
+tim-001,Monday,星期一,time_numbers,n,We have English on Monday.,我們星期一有英文課。,📅,Tuesday,Sunday,Friday
+tim-002,Tuesday,星期二,time_numbers,n,I go swimming on Tuesday.,我星期二去游泳。,📅,Monday,Wednesday,Thursday
+tim-003,Wednesday,星期三,time_numbers,n,It's Wednesday today.,今天是星期三。,📅,Tuesday,Thursday,Monday
+tim-004,Thursday,星期四,time_numbers,n,We watch videos on Thursday.,我們星期四看影片。,📅,Wednesday,Friday,Tuesday
+tim-005,Friday,星期五,time_numbers,n,The school trip is on Friday.,校外教學在星期五。,📅,Thursday,Saturday,Monday
+tim-006,Saturday,星期六,time_numbers,n,We go to the market on Saturday.,我們星期六去市場。,📅,Friday,Sunday,Wednesday
+tim-007,Sunday,星期日,time_numbers,n,I get up late on Sunday.,我星期日晚起床。,📅,Saturday,Monday,Friday
+tim-008,week,星期；週,time_numbers,n,There are seven days in a week.,一週有七天。,🗓️,weekend,day,year
+tim-009,weekend,週末,time_numbers,n,We play football at the weekend.,我們週末踢足球。,🎉,week,holiday,yesterday
+tim-010,yesterday,昨天,time_numbers,adv+n,Yesterday I went to the cinema.,我昨天去了電影院。,,today,weekend,week
+tim-011,o'clock,點鐘,time_numbers,adv,It's nine o'clock. Time for bed!,九點了，該睡覺了！,🕘,week,yesterday,weekend
+tim-012,always,總是,time_numbers,adv,I always brush my teeth at night.,我晚上總是會刷牙。,,never,sometimes,often
+tim-013,never,從不,time_numbers,adv,I never drink coffee.,我從來不喝咖啡。,,always,often,sometimes
+tim-014,often,常常,time_numbers,adv,We often go to the library.,我們常常去圖書館。,,sometimes,never,always
+tim-015,sometimes,有時候,time_numbers,adv,Sometimes we have noodles for dinner.,我們有時候晚餐吃麵。,,always,never,often
+tim-016,how often,多久一次,time_numbers,adv+int,How often do you practise the piano?,你多久練一次鋼琴？,,how much,how,why
+tim-017,first,第一,time_numbers,adj+adv,A is the first letter.,A是第一個字母。,🥇,second,third,last
+tim-018,second,第二,time_numbers,adj+adv,B is the second letter.,B是第二個字母。,🥈,first,third,last
+tim-019,third,第三,time_numbers,adj+adv,Our classroom is on the third floor.,我們的教室在三樓。,🥉,second,first,fourth
+tim-020,last,最後的；上一個,time_numbers,adj+adv,Z is the last letter.,Z是最後一個字母。,,first,third,second
+tim-021,then,然後,time_numbers,adv,"Do your homework, then you can play.",先寫作業，然後才能玩。,,when,only,always
+tim-022,hundred,一百,time_numbers,n,There are a hundred people here!,這裡有一百個人！,💯,ninety,sixty,forty
+tim-023,twenty-one,二十一,time_numbers,n,My aunt is twenty-one years old.,我阿姨二十一歲。,,twelve,twenty,thirty-one
+tim-024,thirty,三十,time_numbers,n,There are thirty children in my class.,我們班有三十個小朋友。,,thirteen,forty,twenty
+tim-025,forty,四十,time_numbers,n,My dad is forty years old.,我爸爸四十歲。,,fourteen,thirty,fifty
+tim-026,fifty,五十,time_numbers,n,There are fifty sheep on the farm.,農場裡有五十隻羊。,,fifteen,forty,sixty
+tim-027,sixty,六十,time_numbers,n,Sixty and forty is a hundred.,六十加四十是一百。,,sixteen,seventy,thirty
+tim-028,seventy,七十,time_numbers,n,My grandma is seventy years old.,我奶奶七十歲。,,seventeen,sixty,eighty
+tim-029,eighty,八十,time_numbers,n,There are eighty seats in the cinema.,電影院有八十個座位。,,eighteen,seventy,ninety
+tim-030,ninety,九十,time_numbers,n,Ninety is a big number.,九十是一個很大的數字。,,nineteen,eighty,hundred
+tim-031,fourth,第四,time_numbers,adj+adv,My classroom is on the fourth floor.,我的教室在四樓。,,fifth,first,fourteenth
+tim-032,fifth,第五,time_numbers,adj+adv,Friday is the fifth day of the week.,星期五是一週的第五天。,,fourth,first,fifteenth
+tim-033,tenth,第十,time_numbers,adj+adv,It's my tenth birthday today!,今天是我十歲生日！,🎂,twelfth,fifth,twentieth
+tim-034,twelfth,第十二,time_numbers,adj+adv,December is the twelfth month.,十二月是第十二個月。,,tenth,twentieth,fifth
+tim-035,fifteenth,第十五,time_numbers,adj+adv,Today is the fifteenth of May.,今天是五月十五日。,,fifth,twelfth,twentieth
+tim-036,twentieth,第二十,time_numbers,adj+adv,My birthday is on the twentieth of July.,我的生日在七月二十日。,,twelfth,tenth,second
+mix-001,band,樂團,mixed,n,The band played at the party.,樂團在派對上表演。,🎸,circus,clown,film star
+mix-002,circus,馬戲團,mixed,n,We saw a clown at the circus.,我們在馬戲團看到小丑。,🎪,funfair,cinema,party
+mix-003,clown,小丑,mixed,n,The clown makes everyone laugh.,小丑讓大家哈哈大笑。,🤡,pirate,farmer,pop star
+mix-004,comic,漫畫,mixed,n,I read a comic on the bus.,我在公車上看漫畫。,📖,e-book,video,message
+mix-005,comic book,漫畫書,mixed,n,This comic book is about a brave pirate.,這本漫畫書是關於一個勇敢的海盜。,📚,e-book,DVD,model
+mix-006,dress up,裝扮,mixed,v,Let's dress up as pirates!,我們來裝扮成海盜吧！,🎭,get dressed,put on,hide
+mix-007,film / movie,電影,mixed,n,This film is about a huge whale.,這部電影是關於一隻大鯨魚。,🎬,video,DVD,comic
+mix-008,film star,電影明星,mixed,n,She wants to be a film star.,她想當電影明星。,🌟,pop star,clown,player
+mix-009,funfair,遊樂園,mixed,n,We rode the big wheel at the funfair.,我們在遊樂園坐了摩天輪。,🎡,circus,cinema,market
+mix-010,hide,躲；藏,mixed,v,The kitten hides under the bed.,小貓躲在床底下。,🙈,lose,look for,drop
+mix-011,invite,邀請,mixed,v,Let's invite Grandma to the party.,我們邀請奶奶來派對吧。,💌,call,send,help
+mix-012,laugh,笑,mixed,n+v,The funny clown makes me laugh.,好笑的小丑讓我大笑。,😂,cry,shout,hide
+mix-013,party,派對,mixed,n,Are you coming to my birthday party?,你要來我的生日派對嗎？,🎉,picnic,trip,funfair
+mix-014,pirate,海盜,mixed,n,The pirate is looking for treasure.,海盜正在尋找寶藏。,🏴‍☠️,clown,farmer,driver
+mix-015,pop star,流行歌手,mixed,n,The pop star sang my favourite song.,那位流行歌手唱了我最愛的歌。,🎤,film star,clown,nurse
+mix-016,present,禮物,mixed,n,This present is for you!,這個禮物是給你的！,🎁,ticket,model,message
+mix-017,star,星星；明星,mixed,n,I can see many stars tonight.,今晚我看得到好多星星。,⭐,moon,sky,circle
+mix-018,treasure,寶藏,mixed,n,The treasure is under the rock.,寶藏在岩石下面。,💰,present,ticket,map
+mix-019,noise,噪音,mixed,n,Don't make a noise in the library.,在圖書館不要發出噪音。,🔊,message,laugh,music
+mix-020,age,年齡,mixed,n,We are the same age.,我們同年齡。,🎂,name,address,number
+mix-021,kind,種類,mixed,n,What kind of ice cream do you like?,你喜歡哪一種冰淇淋？,,shape,place,idea
+mix-022,work,工作,mixed,n+v,My aunt works at the hospital.,我阿姨在醫院工作。,💼,play,help,travel
+mix-023,afraid,害怕的,mixed,adj,Don't be afraid of the dark.,不要怕黑。,😨,frightened,surprised,tired
+mix-024,all right,沒問題的；還好,mixed,adj+adv,Are you all right?,你還好嗎？,👌,fine,well,wrong
+mix-025,bad,壞的,mixed,adj,The weather is bad today.,今天天氣不好。,👎,terrible,wrong,worse
+mix-026,boring,無聊的,mixed,adj,This film is boring. Let's play outside.,這部電影好無聊，我們去外面玩吧。,🥱,exciting,difficult,easy
+mix-027,brave,勇敢的,mixed,adj,The brave girl helped the kitten.,勇敢的女孩救了小貓。,🦸,afraid,clever,strong
+mix-028,brilliant,很棒的,mixed,adj+excl,Brilliant! You got all the answers right!,太棒了！你全部答對了！,✨,terrible,boring,wrong
+mix-029,busy,忙碌的；熱鬧的,mixed,adj,Mum is busy in the kitchen.,媽媽在廚房裡忙。,,quiet,tired,slow
+mix-030,careful,小心的,mixed,adj,Be careful on the road!,過馬路要小心！,⚠️,dangerous,quick,safe
+mix-031,clever,聰明的,mixed,adj,Parrots are clever birds.,鸚鵡是聰明的鳥。,🧠,brave,naughty,famous
+mix-032,dangerous,危險的,mixed,adj,Playing on the road is dangerous.,在馬路上玩很危險。,⚠️,safe,careful,difficult
+mix-033,exciting,刺激的；令人興奮的,mixed,adj,The football game was exciting!,那場足球賽好刺激！,🤩,boring,easy,terrible
+mix-034,fair,金色的；公平的,mixed,adj,My sister has fair hair.,我妹妹有一頭金髮。,,blonde,curly,pretty
+mix-035,famous,有名的,mixed,adj,This singer is famous in Taiwan.,這位歌手在台灣很有名。,🌟,clever,pretty,brave
+mix-036,frightened,受驚嚇的,mixed,adj,The kitten is frightened of the dog.,小貓很怕那隻狗。,😱,afraid,surprised,naughty
+mix-037,huge,巨大的,mixed,adj,A whale is a huge animal.,鯨魚是巨大的動物。,🐋,little,tall,fat
+mix-038,little,小的,mixed,adj,The little kitten is asleep.,小貓咪睡著了。,🤏,huge,thin,short
+mix-039,loud,大聲的,mixed,adj,The music is too loud!,音樂太大聲了！,🔊,quiet,noisy,slow
+mix-040,naughty,調皮的,mixed,adj,The naughty puppy ate my homework!,調皮的小狗吃了我的作業！,😈,quiet,clever,kind
+mix-041,pretty,漂亮的,mixed,adj,What a pretty dress!,好漂亮的洋裝！,🌸,famous,little,fair
+mix-042,quick,快的,mixed,adj,Be quick! The bus is coming!,快一點！公車來了！,⚡,slow,quiet,straight
+mix-043,quiet,安靜的,mixed,adj,Please be quiet in class.,上課請保持安靜。,🤫,loud,quick,busy
+mix-044,round,圓的,mixed,adj+prep,The moon is round.,月亮是圓的。,⚪,square,straight,little
+mix-045,safe,安全的,mixed,adj,Wear a helmet to be safe.,戴安全帽才安全。,🛡️,dangerous,careful,strong
+mix-046,slow,慢的,mixed,adj,The snail is very slow.,蝸牛非常慢。,🐌,quick,quiet,weak
+mix-047,surprised,驚訝的,mixed,adj,I was surprised to see the rainbow.,看到彩虹我好驚訝。,😲,frightened,afraid,excited
+mix-048,tall,高的,mixed,adj,The giraffe is very tall.,長頸鹿非常高。,🦒,thin,huge,little
+mix-049,terrible,糟糕的,mixed,adj,The weather was terrible yesterday.,昨天的天氣糟透了。,😖,brilliant,bad,boring
+mix-050,wrong,錯的,mixed,adj,That answer is wrong. Try again!,那個答案是錯的，再試一次！,❌,bad,different,terrible
+mix-051,best,最好的,mixed,adj+adv,You are my best friend.,你是我最好的朋友。,🏆,better,worst,first
+mix-052,top,頂端,mixed,n+adj,We climbed to the top of the mountain.,我們爬到了山頂。,🔝,bottom,floor,roof
+mix-053,bottom,底部,mixed,n+adj,The treasure is at the bottom of the sea.,寶藏在海底。,,top,ground,floor
+mix-054,badly,糟糕地,mixed,adv,"He sings badly, but he loves singing.",他唱得不好，但他愛唱歌。,,well,slowly,loudly
+mix-055,carefully,小心地,mixed,adv,Carry the glass carefully.,小心地拿玻璃杯。,,quickly,quietly,slowly
+mix-056,loudly,大聲地,mixed,adv,Don't shout so loudly!,不要那麼大聲喊叫！,📢,quietly,quickly,badly
+mix-057,quickly,快速地,mixed,adv,The rabbit runs quickly.,兔子跑得很快。,💨,slowly,quietly,carefully
+mix-058,quietly,安靜地,mixed,adv,Please close the door quietly.,請輕輕地關門。,,loudly,quickly,badly
+mix-059,slowly,緩慢地,mixed,adv,The snail moves slowly.,蝸牛慢慢地移動。,🐌,quickly,carefully,quietly
+mix-060,only,只有,mixed,adv,I have only one ticket.,我只有一張票。,,all,both,every
+mix-061,be called,叫做,mixed,v,My puppy is called Lucky.,我的小狗叫做Lucky。,🏷️,call,mean,need
+mix-062,bring,帶來,mixed,v,Bring your swimsuit tomorrow.,明天帶你的泳衣來。,,take,carry,buy
+mix-063,call,打電話；呼叫,mixed,v,Call me after dinner.,晚餐後打電話給我。,📞,text,send,shout
+mix-064,carry,提；搬,mixed,v,Can you carry this box?,你可以搬這個箱子嗎？,📦,bring,take,drop
+mix-065,change,改變；換,mixed,v,Change your wet clothes.,換掉你濕濕的衣服。,🔄,move,fix,take off
+mix-066,cry,哭,mixed,v,The baby is crying. He is hungry.,寶寶在哭，他餓了。,😢,laugh,shout,hurt
+mix-067,drop,掉落；弄掉,mixed,v,Don't drop the plate!,不要把盤子摔了！,,fall,carry,lose
+mix-068,fall,跌倒；落下,mixed,v,Be careful! Don't fall!,小心！不要跌倒！,,drop,hurt,hop
+mix-069,fix,修理,mixed,v,Dad can fix my bike.,爸爸會修我的腳踏車。,🔧,build,change,help
+mix-070,help,幫助,mixed,v,Can you help me with my homework?,你可以幫我寫作業嗎？,🤝,teach,need,call
+mix-071,look for,尋找,mixed,v,I'm looking for my other shoe.,我在找我的另一隻鞋。,🔍,hide,lose,find
+mix-072,lose,弄丟；輸,mixed,v,Don't lose your ticket!,不要弄丟你的票！,,drop,look for,hide
+mix-073,move,移動,mixed,v,Help me move this table.,幫我搬這張桌子。,➡️,carry,change,take
+mix-074,need,需要,mixed,v,Plants need water and sun.,植物需要水和陽光。,,want,help,think
+mix-075,send,寄送；傳送,mixed,v,Send a message to your aunt.,傳訊息給你阿姨。,📤,bring,call,text
+mix-076,shout,大喊,mixed,v,Don't shout in the library!,在圖書館不要大喊！,📢,cry,laugh,call
+mix-077,take,拿；帶走,mixed,v,Take an umbrella with you.,帶把傘出門。,,bring,carry,buy
+mix-078,wait,等待,mixed,v,Wait for me at the bus stop.,在公車站牌等我。,⏳,stay,stop,walk
+mix-079,could,能夠（過去式）,mixed,v,I could swim when I was five.,我五歲時就會游泳了。,,must,would,shall
+mix-080,must,必須,mixed,v,You must wear a helmet.,你必須戴安全帽。,❗,could,shall,would
+mix-081,shall,要不要（提議）,mixed,v,Shall we go swimming?,我們要不要去游泳？,,must,could,would
+mix-082,would,想要（客氣說法）,mixed,v,Would you like some tea?,你想喝點茶嗎？,,shall,could,must
+mix-083,have to,必須,mixed,v,I have to do my homework first.,我必須先寫作業。,,want to,need,must
+mix-084,come on!,快點！加油！,mixed,excl,Come on! We're going to be late!,快點！我們要遲到了！,🏃,excuse me,all right,brilliant!
+mix-085,excuse me,不好意思,mixed,dis,"Excuse me, where is the station?",不好意思，請問車站在哪裡？,🙋,come on!,thank you,all right
+mix-086,above,在…上方,mixed,prep,The plane is above the clouds.,飛機在雲的上方。,⬆️,below,near,along
+mix-087,after,在…之後,mixed,prep,We play games after dinner.,晚餐後我們玩遊戲。,,before,at,by
+mix-088,along,沿著,mixed,prep,We walked along the river.,我們沿著河邊走。,,around,into,above
+mix-089,another,另一個,mixed,det+pron,Can I have another pancake?,我可以再吃一片鬆餅嗎？,,any,every,both
+mix-090,any,任何,mixed,det+pron,Do you have any questions?,你有任何問題嗎？,,another,every,all
+mix-091,around,環繞；在四周,mixed,prep,We walked around the lake.,我們繞著湖走了一圈。,🔄,along,above,into
+mix-092,at,在（時間）,mixed,prep,School starts at eight o'clock.,學校八點開始上課。,,on,by,after
+mix-093,because,因為,mixed,conj,I'm happy because it's my birthday.,我很開心，因為今天是我的生日。,,when,than,before
+mix-094,before,在…之前,mixed,prep,Wash your hands before lunch.,吃午餐前要洗手。,,after,at,by
+mix-095,below,在…下方,mixed,prep,The fish swim below the boat.,魚在船的下方游。,⬇️,above,near,out of
+mix-096,both,兩者都,mixed,det+pron,Both answers are right!,兩個答案都對！,,all,every,another
+mix-097,by,搭乘；在…旁,mixed,prep,We went to the city by train.,我們搭火車去城市。,🚆,at,on,into
+mix-098,down,向下,mixed,adv+prep,The monkey climbed down the tree.,猴子從樹上爬下來。,⬇️,up,into,out
+mix-099,every,每一個,mixed,det,I swim every Saturday.,我每個星期六游泳。,,any,both,all
+mix-100,everyone,每個人,mixed,pron,Everyone loves the funfair.,每個人都愛遊樂園。,👥,someone,everything,nothing
+mix-101,everything,每件事；所有東西,mixed,pron,Everything is ready for the party.,派對的一切都準備好了。,,something,everyone,nothing
+mix-102,how,如何,mixed,adv,How do you spell your name?,你的名字怎麼拼？,❓,why,where,which
+mix-103,how much,多少,mixed,adv+int,How much is this comic book?,這本漫畫書多少錢？,💲,how often,how,why
+mix-104,inside,在裡面,mixed,adv+n,It's raining. Let's play inside.,下雨了，我們在室內玩吧。,🏠,outside,upstairs,downstairs
+mix-105,into,進入,mixed,prep,The rabbit hopped into the box.,兔子跳進箱子裡。,📥,out of,around,along
+mix-106,more,更多,mixed,adv+det+pron,"Can I have more noodles, please?",請再給我一些麵好嗎？,➕,most,less,only
+mix-107,most,最多；大部分,mixed,adv+det+pron,This is the most exciting game!,這是最刺激的遊戲！,,more,best,every
+mix-108,near,在…附近,mixed,adv+prep,The school is near the park.,學校在公園附近。,📍,above,opposite,along
+mix-109,nothing,什麼都沒有,mixed,pron,There is nothing in the box.,箱子裡什麼都沒有。,🈳,something,everything,someone
+mix-110,off,離開；脫離,mixed,adv+prep,The cat jumped off the roof.,貓從屋頂跳下來。,,on,out,down
+mix-111,on,在（星期）,mixed,prep,We play football on Saturday.,我們星期六踢足球。,,at,by,off
+mix-112,opposite,在…對面,mixed,prep,The café is opposite the cinema.,咖啡廳在電影院對面。,↔️,near,above,along
+mix-113,out,外出；出去,mixed,adv,Let's go out and play!,我們出去玩吧！,🚪,in,off,up
+mix-114,out of,從…出來,mixed,prep,The dolphin jumped out of the water.,海豚跳出水面。,,into,off,down
+mix-115,outside,在外面,mixed,adv+n+prep,The children are playing outside.,孩子們在外面玩。,🌳,inside,upstairs,out
+mix-116,someone,某個人,mixed,pron,Someone is at the door.,有人在門口。,👤,everyone,something,nothing
+mix-117,something,某件東西,mixed,pron,There is something in my shoe!,我的鞋子裡有東西！,,someone,nothing,everything
+mix-118,than,比,mixed,conj+prep,A whale is bigger than a dolphin.,鯨魚比海豚大。,⚖️,then,because,when
+mix-119,up,向上,mixed,adv+prep,Look up at the sky!,抬頭看天空！,⬆️,down,out,off
+mix-120,when,何時；當…時,mixed,adv+conj+int,When is your birthday?,你的生日是什麼時候？,❓,where,why,who
+mix-121,where,哪裡,mixed,pron,Where is my other sock?,我的另一隻襪子在哪裡？,❓,when,who,which
+mix-122,which,哪一個,mixed,pron,Which cake do you want?,你想要哪一個蛋糕？,❓,where,who,why
+mix-123,who,誰,mixed,pron,Who is that tall man?,那個高高的男人是誰？,❓,which,where,when
+mix-124,why,為什麼,mixed,int,Why are you laughing?,你為什麼在笑？,❓,how,when,where
+mix-125,all,全部,mixed,adj+adv+det+pron,We ate all the pancakes.,我們把鬆餅全吃光了。,💯,both,every,any

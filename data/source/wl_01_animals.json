@@ -1,0 +1,18 @@
+[
+{"id":"ani-001","word":"bat","zh":"蝙蝠","topic":"animals","pos":"n","sentence":"Bats fly at night.","sentence_zh":"蝙蝠在晚上飛。","emoji":"🦇","distractors":["whale","snail","panda"]},
+{"id":"ani-002","word":"cage","zh":"籠子","topic":"animals","pos":"n","sentence":"The parrot is in a cage.","sentence_zh":"鸚鵡在籠子裡。","emoji":"","distractors":["roof","net","map"]},
+{"id":"ani-003","word":"dolphin","zh":"海豚","topic":"animals","pos":"n","sentence":"Dolphins jump out of the water.","sentence_zh":"海豚跳出水面。","emoji":"🐬","distractors":["shark","whale","penguin"]},
+{"id":"ani-004","word":"feed","zh":"餵","topic":"animals","pos":"v","sentence":"I feed my rabbit every day.","sentence_zh":"我每天餵我的兔子。","emoji":"🥣","distractors":["wash","carry","catch"]},
+{"id":"ani-005","word":"fly","zh":"蒼蠅","topic":"animals","pos":"n","sentence":"There is a fly in my soup!","sentence_zh":"我的湯裡有一隻蒼蠅！","emoji":"🪰","distractors":["snail","kitten","parrot"]},
+{"id":"ani-006","word":"kangaroo","zh":"袋鼠","topic":"animals","pos":"n","sentence":"Kangaroos can hop very well.","sentence_zh":"袋鼠很會跳。","emoji":"🦘","distractors":["panda","lion","rabbit"]},
+{"id":"ani-007","word":"kitten","zh":"小貓","topic":"animals","pos":"n","sentence":"The kitten is playing with a ball.","sentence_zh":"小貓在玩球。","emoji":"🐱","distractors":["puppy","rabbit","parrot"]},
+{"id":"ani-008","word":"lion","zh":"獅子","topic":"animals","pos":"n","sentence":"The lion is sleeping under the tree.","sentence_zh":"獅子在樹下睡覺。","emoji":"🦁","distractors":["panda","kangaroo","shark"]},
+{"id":"ani-009","word":"panda","zh":"貓熊","topic":"animals","pos":"n","sentence":"Pandas eat leaves all day.","sentence_zh":"貓熊整天吃葉子。","emoji":"🐼","distractors":["lion","kangaroo","whale"]},
+{"id":"ani-010","word":"parrot","zh":"鸚鵡","topic":"animals","pos":"n","sentence":"My parrot can say my name.","sentence_zh":"我的鸚鵡會說我的名字。","emoji":"🦜","distractors":["penguin","kitten","fly"]},
+{"id":"ani-011","word":"penguin","zh":"企鵝","topic":"animals","pos":"n","sentence":"Penguins live where it is cold.","sentence_zh":"企鵝住在很冷的地方。","emoji":"🐧","distractors":["parrot","dolphin","snail"]},
+{"id":"ani-012","word":"puppy","zh":"小狗","topic":"animals","pos":"n","sentence":"The puppy likes to run and jump.","sentence_zh":"小狗喜歡跑跑跳跳。","emoji":"🐶","distractors":["kitten","rabbit","lion"]},
+{"id":"ani-013","word":"rabbit","zh":"兔子","topic":"animals","pos":"n","sentence":"The rabbit is eating a carrot.","sentence_zh":"兔子在吃紅蘿蔔。","emoji":"🐰","distractors":["kitten","puppy","kangaroo"]},
+{"id":"ani-014","word":"shark","zh":"鯊魚","topic":"animals","pos":"n","sentence":"Sharks have a lot of teeth.","sentence_zh":"鯊魚有很多牙齒。","emoji":"🦈","distractors":["whale","dolphin","penguin"]},
+{"id":"ani-015","word":"snail","zh":"蝸牛","topic":"animals","pos":"n","sentence":"A snail is very slow.","sentence_zh":"蝸牛非常慢。","emoji":"🐌","distractors":["fly","bat","kitten"]},
+{"id":"ani-016","word":"whale","zh":"鯨魚","topic":"animals","pos":"n","sentence":"A whale is bigger than a shark.","sentence_zh":"鯨魚比鯊魚大。","emoji":"🐳","distractors":["dolphin","shark","panda"]}
+]
