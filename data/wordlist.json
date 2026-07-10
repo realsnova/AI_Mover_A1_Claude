@@ -5959,6 +5959,51 @@
     "every",
     "any"
    ]
+  },
+  {
+   "id": "mix-126",
+   "word": "if",
+   "zh": "如果",
+   "topic": "mixed",
+   "pos": "conj",
+   "sentence": "If it rains, we stay at home.",
+   "sentence_zh": "如果下雨，我們就待在家裡。",
+   "emoji": "",
+   "distractors": [
+    "because",
+    "when",
+    "before"
+   ]
+  },
+  {
+   "id": "mix-127",
+   "word": "so",
+   "zh": "所以",
+   "topic": "mixed",
+   "pos": "conj",
+   "sentence": "It was cold, so I wore a coat.",
+   "sentence_zh": "天氣很冷，所以我穿了外套。",
+   "emoji": "",
+   "distractors": [
+    "because",
+    "than",
+    "when"
+   ]
+  },
+  {
+   "id": "mix-128",
+   "word": "while",
+   "zh": "當…的時候",
+   "topic": "mixed",
+   "pos": "conj",
+   "sentence": "She sings while she walks.",
+   "sentence_zh": "她一邊走路一邊唱歌。",
+   "emoji": "",
+   "distractors": [
+    "when",
+    "after",
+    "before"
+   ]
   }
  ]
 }
