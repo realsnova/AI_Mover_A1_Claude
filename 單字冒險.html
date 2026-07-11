@@ -157,6 +157,16 @@
     #topbar{justify-content:flex-start;}
   }
 
+  /* ===== 每日任務面板（Phase 6 D2）===== */
+  .daily-task{
+    background:var(--panel); backdrop-filter:var(--glass); -webkit-backdrop-filter:var(--glass);
+    border:1px solid var(--panel-brd); border-radius:var(--r-lg);
+    padding:14px 18px; margin-bottom:16px; box-shadow:var(--sh-1);
+    display:flex; flex-wrap:wrap; align-items:center; gap:10px 20px; justify-content:center;
+  }
+  .daily-task .dt-row{font-size:15px; font-weight:700; white-space:nowrap;}
+  .daily-task .dt-claimed{font-size:15px; font-weight:800; color:var(--gold);}
+
   /* ===== 地圖（現代遊戲關卡磚） ===== */
   #map-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(158px,1fr)); gap:16px;}
   .region{
@@ -279,6 +289,19 @@
   .dex-card .dname{font-size:17px; font-weight:800; margin-top:4px;}
   .dex-card.empty{filter:none; opacity:.35; font-size:56px; display:flex; align-items:center; justify-content:center; cursor:default; box-shadow:none;}
   .dex-card.empty:hover{transform:none; box-shadow:var(--sh-1);}
+
+  /* ===== 錯題本（Phase 6 D1）===== */
+  #wrongbook-list{display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:12px;}
+  .wrong-card{
+    background:linear-gradient(165deg, rgba(214,49,76,.22), rgba(38,38,78,.6));
+    border:1px solid rgba(255,93,108,.35); border-radius:var(--r-lg);
+    padding:12px 10px; text-align:center; box-shadow:var(--sh-1);
+  }
+  .wrong-card .wemoji{font-size:34px;}
+  .wrong-card .wword{font-size:17px; font-weight:800; margin-top:2px;}
+  .wrong-card .wzh{font-size:13px; color:var(--text-dim);}
+  .wrong-card .wstat{font-size:12px; color:var(--red); margin-top:4px; font-weight:700;}
+  #wrongbook-empty{text-align:center; padding:30px 10px; color:var(--text-dim); font-size:16px;}
   /* 單字卡彈窗 */
   #wordcard-overlay{
     position:fixed; inset:0; background:rgba(0,0,0,.7); display:none;
@@ -344,6 +367,10 @@
   #learn-progress{font-size:20px; color:var(--gold); font-weight:800; margin:12px 0;}
   #learn-nav{display:flex; justify-content:center; flex-wrap:wrap;}
   #learn-nav .btn{font-size:24px;}
+  #speech-feedback{text-align:center; font-size:16px; font-weight:700; min-height:24px; margin:4px 0 10px;}
+  #speech-feedback.listening{color:var(--blue);}
+  #speech-feedback.correct{color:var(--green);}
+  #speech-feedback.wrong{color:var(--red);}
 
   /* ===== 彈窗（區域選單 / 每日 / 重置 通用玻璃卡） ===== */
   #region-menu-overlay{
@@ -763,6 +790,7 @@
   <!-- 地圖 -->
   <div id="map-screen" class="screen">
     <h2 class="page-title">🗺️ 冒險地圖</h2>
+    <div id="daily-task-panel"></div>
     <div id="map-grid"></div>
     <div style="text-align:center; margin-top:20px;">
       <button class="btn small" style="opacity:.75;" onclick="Game.confirmReset()">🧹 重置進度（從零開始）</button>
@@ -856,7 +884,9 @@
       <button class="btn blue" onclick="Game.learnPrev()">◀ 上一個</button>
       <button class="btn" onclick="Game.learnSpeak()">🔊 再聽一次</button>
       <button class="btn blue" onclick="Game.learnNext()">下一個 ▶</button>
+      <button class="btn" id="speech-practice-btn" style="display:none;" onclick="Game.speechPractice()">🎤 跟我唸</button>
     </div>
+    <div id="speech-feedback"></div>
     <div>
       <button class="btn green" onclick="Game.startBattle(Game.state.lastRegion)">⚔️ 我學好了，去戰鬥！</button>
       <button class="btn small" onclick="Game.showMap()">🗺️ 回地圖</button>
@@ -893,10 +923,22 @@
     <div id="dash-overview"></div>
     <div id="dash-topics"></div>
     <div style="text-align:center; margin-top:16px;">
+      <button class="btn small" style="background:var(--red); color:#fff; box-shadow:0 6px 0 #a33;" onclick="Game.showWrongBook()">📖 錯題本 (<span id="dash-wrong-count">0</span>)</button>
       <button class="btn green small" onclick="Game.exportRecord()">📋 匯出學習紀錄</button>
       <button class="btn blue small" onclick="Game.showMap()">🗺️ 回地圖</button>
     </div>
     <div id="dash-export"></div>
+  </div>
+
+  <!-- 錯題本（Phase 6 D1）-->
+  <div id="wrongbook-screen" class="screen">
+    <h2 class="page-title">📖 錯題本</h2>
+    <p style="text-align:center; color:var(--text-dim); font-size:15px; margin-bottom:14px;">這些是你比較容易答錯的單字，練熟它們吧！</p>
+    <div id="wrongbook-list"></div>
+    <div style="text-align:center; margin-top:16px;">
+      <button class="btn green" id="wrongbook-battle-btn" onclick="Game.startReviewBattle()">⚔️ 開始複習戰</button>
+      <button class="btn blue small" onclick="Game.showDash()">📊 回進度</button>
+    </div>
   </div>
 
   <!-- 區域選單彈窗 -->
@@ -1503,6 +1545,9 @@ document.addEventListener("visibilitychange", () => { if (document.hidden) { try
 /* 每 15 秒定時存檔的安全網 */
 setInterval(() => { try{ Game.save(); }catch(e){} }, 15000);
 
+/* ---------- Phase 6 D2：每日任務目標 ---------- */
+const DAILY_GOAL_NEW = 3, DAILY_GOAL_REVIEW = 5, DAILY_TASK_REWARD = 15;
+
 /* ---------- 道館與商店 ---------- */
 const GYM_QUESTIONS = 10, GYM_PASS = 8, GYM_TIME = 20;
 /* 道館 boss 改為 per-region（bossOf(key)）；mixed 三章各答對 30 字才開放 */
@@ -1586,6 +1631,11 @@ if ("speechSynthesis" in window){
   checkEnglishVoice();
   speechSynthesis.onvoiceschanged = checkEnglishVoice; /* 多數瀏覽器語音清單為非同步載入 */
 }
+/* Phase 6 D3：口說跟讀為實驗性功能，僅在瀏覽器支援 SpeechRecognition 時才顯示入口 */
+if (window.SpeechRecognition || window.webkitSpeechRecognition){
+  const spBtn = document.getElementById("speech-practice-btn");
+  if (spBtn) spBtn.style.display = "";
+}
 
 /* ---------- 遊戲主體 ---------- */
 const Game = {
@@ -1600,7 +1650,9 @@ const Game = {
       /* Phase 3：SRS / 每日獎勵 */
       lastLogin: "", streak: 0, shinyCaught: [], shinyPending: false,
       /* Phase 4：劇情 / 自由挑戰 */
-      storySeen: false, storyEnded: false, freeChallenge: false, version: 4
+      storySeen: false, storyEnded: false, freeChallenge: false, version: 4,
+      /* Phase 6 D2：每日任務 */
+      dailyTask: { date:"", newLearned:0, reviewed:0, claimed:false }
     };
   },
   load(){
@@ -1628,6 +1680,7 @@ const Game = {
     if (typeof s.storySeen !== "boolean") s.storySeen = false;
     if (typeof s.storyEnded !== "boolean") s.storyEnded = false;
     if (typeof s.freeChallenge !== "boolean") s.freeChallenge = false;
+    if (!s.dailyTask || typeof s.dailyTask !== "object") s.dailyTask = { date:"", newLearned:0, reviewed:0, claimed:false };
     Object.values(s.wordStats).forEach(st => {
       if (typeof st.box !== "number") st.box = 1;
       if (typeof st.lastSeen !== "string") st.lastSeen = "";
@@ -1789,12 +1842,20 @@ const Game = {
     /* 答對升盒（最高 6 階）＋記錄今天；答錯打回 box1，從頭複習 */
     grade(id, correct){
       const s = this.stat(id), t = this.today();
+      const wasNew = s.correct === 0;       /* 這題答對前從未答對過 → 算「學會新字」 */
+      const wasReview = (s.box || 1) > 1;   /* 已經不是剛學的生字 → 算「複習」 */
       if (correct){
         s.correct++;
         s.box = Math.min(s.box + 1, Game.SRS_MAX_BOX);
         if (!s.correctDays.includes(t)){
           s.correctDays.push(t);
           if (s.correctDays.length > 3) s.correctDays = s.correctDays.slice(-3);
+        }
+        /* Phase 6 D2：累計今日每日任務進度 */
+        const dt = Game.state.dailyTask;
+        if (dt && dt.date === t){
+          if (wasNew) dt.newLearned++;
+          else if (wasReview) dt.reviewed++;
         }
       } else {
         s.wrong++;
@@ -1903,6 +1964,7 @@ const Game = {
     if (this.state.badges.length >= REGIONS.length && !this.state.storyEnded){ this.playEnding(); return; }
     /* Phase 3：先發每日獎勵，領完再檢查進化；當天已登入則直接檢查進化 */
     if (!this.checkDailyReward()) this.checkEvolutions();
+    this.renderDailyTaskPanel(); /* Phase 6 D2：每日任務進度（放在 checkDailyReward 之後，確保拿到當天重置後的數字） */
   },
 
   /* ---------- Phase 3：每日登入獎勵 ---------- */
@@ -1914,6 +1976,7 @@ const Game = {
     this.state.lastLogin = today;
     this.state.coins += 10;
     this.state.shinyPending = this.state.streak >= 3; /* 連 3 天：當天第一場野戰為異色 */
+    this.state.dailyTask = { date: today, newLearned:0, reviewed:0, claimed:false }; /* Phase 6 D2：每天重置每日任務進度 */
     this.save();
     this.updateTopbar();
     document.getElementById("daily-text").innerHTML =
@@ -1926,6 +1989,36 @@ const Game = {
   closeDailyReward(){
     document.getElementById("daily-overlay").style.display = "none";
     this.checkEvolutions(); /* 領完獎勵再檢查進化 */
+    this.renderDailyTaskPanel(); /* Phase 6 D2：確保跨日重置後面板數字正確 */
+  },
+
+  /* ---------- Phase 6 D2：每日任務 ---------- */
+  renderDailyTaskPanel(){
+    const dt = this.state.dailyTask;
+    const doneNew = dt.newLearned >= DAILY_GOAL_NEW;
+    const doneReview = dt.reviewed >= DAILY_GOAL_REVIEW;
+    const allDone = doneNew && doneReview;
+    document.getElementById("daily-task-panel").innerHTML = `
+      <div class="daily-task">
+        <div class="dt-row">${doneNew ? "✅" : "📖"} 學習新字 ${Math.min(dt.newLearned, DAILY_GOAL_NEW)}/${DAILY_GOAL_NEW}</div>
+        <div class="dt-row">${doneReview ? "✅" : "🔁"} 複習單字 ${Math.min(dt.reviewed, DAILY_GOAL_REVIEW)}/${DAILY_GOAL_REVIEW}</div>
+        ${allDone
+          ? (dt.claimed
+              ? `<div class="dt-claimed">🎉 今日任務已完成！</div>`
+              : `<button class="btn small green" onclick="Game.claimDailyTask()">🎁 領取獎勵 +${DAILY_TASK_REWARD}💰</button>`)
+          : ""}
+      </div>`;
+  },
+  claimDailyTask(){
+    const dt = this.state.dailyTask;
+    if (dt.claimed || dt.newLearned < DAILY_GOAL_NEW || dt.reviewed < DAILY_GOAL_REVIEW) return;
+    dt.claimed = true;
+    this.state.coins += DAILY_TASK_REWARD;
+    this.save();
+    this.updateTopbar();
+    sfxCoin();
+    this.toast("🎁 每日任務完成！+" + DAILY_TASK_REWARD + "💰", 1800);
+    this.renderDailyTaskPanel();
   },
 
   /* ---------- Phase 3：寶可夢進化 ---------- */
@@ -2051,6 +2144,8 @@ const Game = {
       "⭐ " + (this.learnIndex + 1) + " / " + this.learnWords.length;
     twe(document.getElementById("learn-card"));
     speak(w.word);
+    const fb = document.getElementById("speech-feedback");
+    if (fb){ fb.textContent = ""; fb.className = ""; } /* Phase 6 D3：換字時清掉上一次的口說回饋 */
   },
   learnSpeak(){
     const w = this.learnWords[this.learnIndex];
@@ -2064,6 +2159,41 @@ const Game = {
   learnPrev(){
     this.learnIndex = (this.learnIndex - 1 + this.learnWords.length) % this.learnWords.length;
     this.renderLearn();
+  },
+
+  /* ---------- Phase 6 D3：口說跟讀（實驗性，僅支援的瀏覽器顯示）---------- */
+  _recognizing: false,
+  speechPractice(){
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SR || this._recognizing) return;
+    const w = this.learnWords[this.learnIndex];
+    const fb = document.getElementById("speech-feedback");
+    try{
+      const rec = new SR();
+      rec.lang = "en-US"; rec.interimResults = false; rec.maxAlternatives = 3;
+      this._recognizing = true;
+      fb.textContent = "🎧 我在聽…請說出這個單字！";
+      fb.className = "listening";
+      rec.onresult = (e) => {
+        const norm = s => s.toLowerCase().trim().replace(/[^a-z]/g, "");
+        const alts = Array.from(e.results[0]).map(r => norm(r.transcript));
+        const target = norm(w.word);
+        if (alts.includes(target)){
+          fb.textContent = "✅ 說得很棒！";
+          fb.className = "correct";
+          sfxCorrect();
+        } else {
+          fb.textContent = "🔁 再試一次，仔細聽發音喔！（你說了：" + (alts[0] || "？") + "）";
+          fb.className = "wrong";
+        }
+      };
+      rec.onerror = () => {
+        fb.textContent = "🎤 沒聽清楚，再試一次！";
+        fb.className = "wrong";
+      };
+      rec.onend = () => { this._recognizing = false; };
+      rec.start();
+    }catch(e){ this._recognizing = false; }
   },
 
   /* ---------- 戰鬥 ---------- */
@@ -2260,10 +2390,10 @@ const Game = {
       this.startTimer();
     } else {
       let balls = "";
-      for (let i = 0; i < QUESTIONS_PER_BATTLE; i++) balls += (i < b.index) ? "🔴" : "⚪";
+      for (let i = 0; i < b.qWords.length; i++) balls += (i < b.index) ? "🔴" : "⚪";
       document.getElementById("balls").textContent = balls;
     }
-    const _tot = b.isGym ? GYM_QUESTIONS : QUESTIONS_PER_BATTLE;
+    const _tot = b.isGym ? GYM_QUESTIONS : b.qWords.length;
     this.setEnemyHP((_tot - b.index) / _tot * 100);
 
     const type = this.pickType(w);
@@ -2423,7 +2553,7 @@ const Game = {
     const b = this.battle;
     if (b.isGym && correct) b.score++;
     b.index++;
-    const total = b.isGym ? GYM_QUESTIONS : QUESTIONS_PER_BATTLE;
+    const total = b.isGym ? GYM_QUESTIONS : b.qWords.length;
     if (b.index >= total){
       if (b.isGym) this.gymResult();
       else this.catchMonster();
@@ -2814,6 +2944,7 @@ const Game = {
       `<div class="ov"><b>${this.masteryPct(WORDS_ALL)}%</b>總精熟度</div>` +
       `<div class="ov"><b>${this.state.streak}</b>連續登入</div>` +
       `<div class="ov"><b>${this.state.badges.length}</b>徽章</div>`;
+    document.getElementById("dash-wrong-count").textContent = this.wrongWords().length;
     const topics = document.getElementById("dash-topics");
     topics.innerHTML = "";
     REGIONS.forEach(r => {
@@ -2851,6 +2982,67 @@ const Game = {
     ta.value = text; ta.focus(); ta.select();
   },
 
+  /* ---------- 錯題本（Phase 6 D1）---------- */
+  wrongWords(){
+    /* 定義「容易答錯」：答錯次數多於答對，且尚未回到 box1 以上（仍在生字/剛學階段） */
+    return WORDS_ALL.filter(w => {
+      const s = this.state.wordStats[w.id];
+      return s && s.wrong > s.correct && (s.box || 1) <= 1;
+    });
+  },
+  showWrongBook(){
+    this.updateTopbar();
+    const wrongs = this.wrongWords();
+    const list = document.getElementById("wrongbook-list");
+    const btn = document.getElementById("wrongbook-battle-btn");
+    if (!wrongs.length){
+      list.innerHTML = `<div id="wrongbook-empty">🎉 太棒了！目前沒有需要複習的錯題。</div>`;
+      btn.style.display = "none";
+    } else {
+      btn.style.display = "";
+      list.innerHTML = wrongs.map(w => {
+        const s = this.state.wordStats[w.id];
+        return `<div class="wrong-card">
+          <div class="wemoji">${w.emoji || "📝"}</div>
+          <div class="wword">${w.word}</div>
+          <div class="wzh">${w.zh}</div>
+          <div class="wstat">✗${s.wrong} / ✓${s.correct}</div>
+        </div>`;
+      }).join("");
+    }
+    this.switchScreen("wrongbook-screen");
+  },
+  startReviewBattle(){
+    document.getElementById("region-menu-overlay").style.display = "none";
+    speechSynthesis.cancel();
+    const wrongs = this.wrongWords();
+    if (!wrongs.length){ this.toast("🎉 目前沒有需要複習的錯題！", 1800); return; }
+
+    const qWords = this.shuffle(wrongs.slice()).slice(0, QUESTIONS_PER_BATTLE);
+    /* 挑一隻與錯題主題相關的怪獸（優先選還沒收服的），讓複習戰也能收服圖鑑 */
+    const topics = [...new Set(qWords.map(w => w.topic))];
+    const candidates = ALL_MONSTERS.filter(m => topics.includes(m.region));
+    const uncaught = candidates.filter(m => !this.state.caught.some(c => c.id === m.id));
+    const mpool = uncaught.length ? uncaught : (candidates.length ? candidates : ALL_MONSTERS);
+    const monster = mpool[Math.floor(Math.random() * mpool.length)];
+
+    this.state.lastRegion = monster.region;
+    this.battle = { monster, qWords, index:0, isGym:false, score:0, region:monster.region,
+                    alreadyCaught: this.state.caught.some(c => c.id === monster.id), shiny:false, isReview:true };
+    document.getElementById("battle-stage").style.background = BG_STYLES[this.state.equipped.bg] || BG_STYLES.bg_grass;
+    document.getElementById("timer-bar-wrap").style.display = "none";
+    document.getElementById("enemy-img").src = SPRITE(monster.id);
+    document.getElementById("enemy-img").className = "";
+    document.getElementById("enemy-name").textContent = "📖 錯題複習：" + monster.name + " 來考你了！";
+    this.switchScreen("battle-screen");
+    this.renderQuestion();
+    this.battleFxInit();
+    this.comboReset();
+    document.getElementById("enemy-hp-wrap").style.display = "flex";
+    this.setEnemyHP(100);
+    this.enemyEnter();
+  },
+
   /* ---------- 工具 ---------- */
   shuffle(arr){
     for (let i = arr.length - 1; i > 0; i--){
@@ -2885,6 +3077,9 @@ if ("serviceWorker" in navigator){
         const nw = reg.installing;
         if (!nw) return;
         nw.addEventListener("statechange", () => {
+          /* 用「當下是否已有 controller」判斷是不是首次安裝：首次安裝時 installed 那一刻還沒有
+             controller（要等 activate+claim 之後才有），只有真正的版本更新才會在 installed 時
+             就已經有舊版 controller 存在。這個判斷即時檢查，不受頁面存活多久影響。 */
           if (nw.state === "installed" && navigator.serviceWorker.controller){
             _waitingWorker = nw;
             document.getElementById("update-banner").style.display = "flex";
@@ -2895,7 +3090,9 @@ if ("serviceWorker" in navigator){
   });
   let _pwaReloading = false;
   navigator.serviceWorker.addEventListener("controllerchange", () => {
-    if (_pwaReloading) return;
+    /* 只有「真的偵測到新版本、橫幅曾經顯示過」才自動重整；首次安裝時 clients.claim() 也會觸發
+       這個事件，但那不是版本更新，_waitingWorker 這時仍是 null，因此不會誤觸發重整。 */
+    if (!_waitingWorker || _pwaReloading) return;
     _pwaReloading = true;
     location.reload();
   });
