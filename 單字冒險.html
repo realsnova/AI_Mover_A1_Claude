@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>單字冒險 A1 Movers</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' font-size='90'><text y='.9em'>%F0%9F%8E%AE</text></svg>">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="theme-color" content="#0b0b22">
 <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@15.1.0/dist/twemoji.min.js" crossorigin="anonymous"></script>
 <style>
   /* Twemoji 圖檔（統一各平台 emoji 外觀） */
@@ -962,6 +965,12 @@
   </div>
 
   <div id="toast"></div>
+
+  <!-- PWA 更新提示橫幅 -->
+  <div id="update-banner" style="position:fixed; left:50%; bottom:18px; transform:translateX(-50%); z-index:200; display:none; align-items:center; gap:12px; max-width:90vw; background:linear-gradient(180deg,rgba(58,58,110,.96),rgba(34,34,70,.98)); border:1px solid var(--panel-brd); border-radius:999px; padding:10px 10px 10px 20px; box-shadow:0 14px 38px rgba(0,0,0,.5);">
+    <span style="font-size:15px; color:#fff; white-space:nowrap;">🔄 有新版本可用</span>
+    <button class="btn small green" style="margin:0;" onclick="applyPwaUpdate()">立即更新</button>
+  </div>
 </div>
 
 <script>
@@ -1410,6 +1419,18 @@ function chaptersOf(key){
 /* 道館門檻：8 隻區收 6、7 隻區收 5（mixed 另有三章規則） */
 function gymNeed(key){ return monstersOf(key).length >= 8 ? 6 : 5; }
 const SPRITE = (id, shiny) => `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${shiny?"shiny/":""}${id}.png`;
+/* 怪獸圖破圖後備：離線或圖源被擋時，用事件代理一次攔截所有失效的寵物圖，換成 emoji 佔位符（保留原 id/class 讓既有版面/動畫 CSS 繼續生效） */
+document.addEventListener("error", (e) => {
+  const img = e.target;
+  if (img.tagName !== "IMG" || !/PokeAPI\/sprites/.test(img.src)) return;
+  const span = document.createElement("span");
+  span.id = img.id; span.className = img.className;
+  span.textContent = "👾";
+  span.style.cssText = "display:inline-flex;align-items:center;justify-content:center;line-height:1;";
+  img.replaceWith(span);
+  const w = span.getBoundingClientRect().width || 60;
+  span.style.fontSize = Math.round(w * 0.72) + "px";
+}, true);
 /* Phase 4 開場劇情素材：CC0（公共領域）像素風勇者/史萊姆插畫
    來源：OpenGameArt.org — "Hero character sprite sheet"（作者 far）與 "Slime"（作者 Rick Hoppmann/TinyWorlds），皆標示 CC0，無需歸屬。
    非任天堂/Square Enix 官方角色美術，僅為通用風格勇者與史萊姆造型插畫，以 data URI 內嵌（維持單一檔案原則，無外部連結）。 */
@@ -1545,6 +1566,11 @@ function jingleVictory(){ /* DQ 風格過關小號角 */
 }
 
 /* ---------- 語音 ---------- */
+let hasEnglishVoice = false;
+function checkEnglishVoice(){
+  try{ hasEnglishVoice = speechSynthesis.getVoices().some(v => v.lang.startsWith("en")); }
+  catch(e){ hasEnglishVoice = false; }
+}
 function speak(text, rate){
   if (!AudioSettings.voice) return;
   try{
@@ -1556,7 +1582,10 @@ function speak(text, rate){
     speechSynthesis.speak(u);
   }catch(e){ /* 無語音時靜默略過 */ }
 }
-if ("speechSynthesis" in window) speechSynthesis.getVoices();
+if ("speechSynthesis" in window){
+  checkEnglishVoice();
+  speechSynthesis.onvoiceschanged = checkEnglishVoice; /* 多數瀏覽器語音清單為非同步載入 */
+}
 
 /* ---------- 遊戲主體 ---------- */
 const Game = {
@@ -2214,8 +2243,8 @@ const Game = {
   /* ---------- 出題 ---------- */
   pickType(w){
     const types = ["A", "D"];
-    /* B(聽音選圖)：正解與至少 2 個干擾字都要有 emoji，否則沒得選圖 */
-    if (w.emoji && w.distractors.filter(d => WORD_EMOJI[d]).length >= 2) types.push("B");
+    /* B(聽音選圖)：正解與至少 2 個干擾字都要有 emoji，且裝置要能發音、玩家沒關閉發音，否則沒得聽也沒得選 */
+    if (w.emoji && hasEnglishVoice && AudioSettings.voice && w.distractors.filter(d => WORD_EMOJI[d]).length >= 2) types.push("B");
     /* C(拼字)：純小寫 3~8 字母（排除 bus stop / Monday / o'clock / stomach-ache 等） */
     if (/^[a-z]{3,8}$/.test(w.word)) types.push("C");
     return types[Math.floor(Math.random() * types.length)];
@@ -2838,6 +2867,39 @@ const Game = {
     this._toastTimer = setTimeout(() => t.style.display = "none", ms || 1200);
   }
 };
+
+/* ---------- PWA：Service Worker 註冊與更新提示 ---------- */
+let _waitingWorker = null;
+function applyPwaUpdate(){
+  if (_waitingWorker) _waitingWorker.postMessage({type:"SKIP_WAITING"});
+  document.getElementById("update-banner").style.display = "none";
+}
+if ("serviceWorker" in navigator){
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js").then(reg => {
+      if (reg.waiting && navigator.serviceWorker.controller){
+        _waitingWorker = reg.waiting;
+        document.getElementById("update-banner").style.display = "flex";
+      }
+      reg.addEventListener("updatefound", () => {
+        const nw = reg.installing;
+        if (!nw) return;
+        nw.addEventListener("statechange", () => {
+          if (nw.state === "installed" && navigator.serviceWorker.controller){
+            _waitingWorker = nw;
+            document.getElementById("update-banner").style.display = "flex";
+          }
+        });
+      });
+    }).catch(() => {});
+  });
+  let _pwaReloading = false;
+  navigator.serviceWorker.addEventListener("controllerchange", () => {
+    if (_pwaReloading) return;
+    _pwaReloading = true;
+    location.reload();
+  });
+}
 </script>
 </body>
 </html>
