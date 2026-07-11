@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>單字冒險 A1 Movers</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' font-size='90'><text y='.9em'>%F0%9F%8E%AE</text></svg>">
 <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@15.1.0/dist/twemoji.min.js" crossorigin="anonymous"></script>
 <style>
   /* Twemoji 圖檔（統一各平台 emoji 外觀） */
@@ -685,7 +686,9 @@
     #topbar{gap:4px; padding:6px 8px;}
     #topbar .stat-group{gap:4px; flex:1;}
     #topbar .stat{padding:4px 8px; font-size:13px; flex-shrink:0;}
-    #topbar .btn{padding:6px 10px; font-size:14px; min-width:auto; min-height:40px;}
+    #stat-name{display:none;} /* 手機省空間：只留🧢圖示，訓練家文字太長會擠壓存檔/讀檔按鈕 */
+    #topbar .btn{padding:6px 8px; font-size:14px; min-width:auto; min-height:40px;}
+    #topbar-right{gap:4px;}
     .menu-toggle{display:block !important;}
     #nav-buttons{display:none !important;}
     #nav-menu{right:8px;}
@@ -737,6 +740,7 @@
       <button class="btn small" onclick="Game.showDex()">📕 圖鑑</button>
       <button class="btn green small" onclick="Game.showShop()">🛒 商店</button>
       <button class="btn small" style="background:#b57edc;box-shadow:0 6px 0 #7d4ea3;color:#fff;" onclick="Game.showDash()">📊 進度</button>
+      <button class="btn small" onclick="Game.openSettings()">⚙️</button>
     </div>
     <div id="topbar-right">
       <button class="btn small" onclick="Game.openSaveDialog()">💾 存檔</button>
@@ -750,6 +754,7 @@
     <button onclick="Game.showDex(); Game.toggleNavMenu();">📕 圖鑑</button>
     <button onclick="Game.showShop(); Game.toggleNavMenu();">🛒 商店</button>
     <button onclick="Game.showDash(); Game.toggleNavMenu();">📊 進度</button>
+    <button onclick="Game.openSettings(); Game.toggleNavMenu();">⚙️ 設定</button>
   </div>
 
   <!-- 地圖 -->
@@ -769,6 +774,16 @@
       <p style="font-size:18px; color:#cfcfff; margin-bottom:16px;">收服的寶可夢和學習紀錄<br>會全部清除，從零開始！</p>
       <button class="btn small" style="background:var(--red); color:#fff; box-shadow:0 6px 0 #a33;" onclick="Game.resetProgress()">🧹 確定清除</button>
       <button class="btn blue small" onclick="document.getElementById('reset-overlay').style.display='none'">↩ 取消</button>
+    </div>
+  </div>
+
+  <!-- 音訊設定彈窗 -->
+  <div id="settings-overlay" style="position:fixed; inset:0; background:rgba(6,6,20,.62); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); display:none; justify-content:center; align-items:center; z-index:120; padding:12px;" onclick="Game.closeSettings()">
+    <div style="background:linear-gradient(180deg,rgba(58,58,110,.94),rgba(34,34,70,.96)); border:1px solid var(--panel-brd); border-radius:30px; padding:28px 22px; text-align:center; max-width:420px; width:100%; box-shadow:0 24px 60px rgba(0,0,0,.55), inset 0 2px 0 rgba(255,255,255,.14);" onclick="event.stopPropagation()">
+      <div style="font-size:44px;">⚙️</div>
+      <h3 style="font-size:24px; margin:8px 0 18px;">音訊設定</h3>
+      <div id="settings-rows" style="display:flex; flex-direction:column; gap:12px; margin-bottom:20px;"></div>
+      <button class="btn blue small" onclick="Game.closeSettings()">✖ 關閉</button>
     </div>
   </div>
 
@@ -962,7 +977,7 @@ const WORDS_ALL = [
  {"id":"ani-002","word":"cage","zh":"籠子","topic":"animals","sentence":"The parrot is in a cage.","sentence_zh":"鸚鵡在籠子裡。","emoji":"","distractors":["roof","net","map"]},
  {"id":"ani-003","word":"dolphin","zh":"海豚","topic":"animals","sentence":"Dolphins jump out of the water.","sentence_zh":"海豚跳出水面。","emoji":"🐬","distractors":["shark","whale","penguin"]},
  {"id":"ani-004","word":"feed","zh":"餵","topic":"animals","sentence":"I feed my rabbit every day.","sentence_zh":"我每天餵我的兔子。","emoji":"🥣","distractors":["wash","carry","catch"]},
- {"id":"ani-005","word":"fly","zh":"蒼蠅","topic":"animals","sentence":"There is a fly in my soup!","sentence_zh":"我的湯裡有一隻蒼蠅！","emoji":"","distractors":["snail","kitten","parrot"]},
+ {"id":"ani-005","word":"fly","zh":"蒼蠅","topic":"animals","sentence":"There is a fly in my soup!","sentence_zh":"我的湯裡有一隻蒼蠅！","emoji":"🪰","distractors":["snail","kitten","parrot"]},
  {"id":"ani-006","word":"kangaroo","zh":"袋鼠","topic":"animals","sentence":"Kangaroos can hop very well.","sentence_zh":"袋鼠很會跳。","emoji":"🦘","distractors":["panda","lion","rabbit"]},
  {"id":"ani-007","word":"kitten","zh":"小貓","topic":"animals","sentence":"The kitten is playing with a ball.","sentence_zh":"小貓在玩球。","emoji":"🐱","distractors":["puppy","rabbit","parrot"]},
  {"id":"ani-008","word":"lion","zh":"獅子","topic":"animals","sentence":"The lion is sleeping under the tree.","sentence_zh":"獅子在樹下睡覺。","emoji":"🦁","distractors":["panda","kangaroo","shark"]},
@@ -1026,7 +1041,7 @@ const WORDS_ALL = [
  {"id":"bod-028","word":"tired","zh":"累的","topic":"body","sentence":"I'm tired. I want to sleep.","sentence_zh":"我好累，我想睡覺。","emoji":"😴","distractors":["hungry","thirsty","afraid"]},
  {"id":"bod-029","word":"tooth / teeth","zh":"牙齒","topic":"body","sentence":"Brush your teeth every day.","sentence_zh":"每天都要刷牙。","emoji":"🦷","distractors":["neck","beard","moustache"]},
  {"id":"bod-030","word":"toothache","zh":"牙痛","topic":"body","sentence":"I have a toothache. I must see the dentist.","sentence_zh":"我牙痛，必須去看牙醫。","emoji":"😖","distractors":["earache","headache","stomach-ache"]},
- {"id":"bod-031","word":"toothbrush","zh":"牙刷","topic":"body","sentence":"My toothbrush is red.","sentence_zh":"我的牙刷是紅色的。","emoji":"","distractors":["toothpaste","towel","bottle"]},
+ {"id":"bod-031","word":"toothbrush","zh":"牙刷","topic":"body","sentence":"My toothbrush is red.","sentence_zh":"我的牙刷是紅色的。","emoji":"🪥","distractors":["toothpaste","towel","bottle"]},
  {"id":"bod-032","word":"toothpaste","zh":"牙膏","topic":"body","sentence":"Put toothpaste on your toothbrush.","sentence_zh":"把牙膏擠在牙刷上。","emoji":"","distractors":["toothbrush","towel","blanket"]},
  {"id":"bod-033","word":"weak","zh":"虛弱的","topic":"body","sentence":"I was ill last week and I'm still weak.","sentence_zh":"我上週生病，現在還很虛弱。","emoji":"","distractors":["strong","tired","thin"]},
  {"id":"bod-034","word":"well","zh":"健康的；好地","topic":"body","sentence":"I don't feel well today.","sentence_zh":"我今天覺得不太舒服。","emoji":"","distractors":["fine","better","bad"]},
@@ -1075,8 +1090,8 @@ const WORDS_ALL = [
  {"id":"spo-012","word":"net","zh":"網子","topic":"sports","sentence":"The ball is in the net!","sentence_zh":"球進網了！","emoji":"🕸️","distractors":["goal","cage","map"]},
  {"id":"spo-013","word":"player","zh":"球員；選手","topic":"sports","sentence":"He is the best player in our team.","sentence_zh":"他是我們隊上最棒的球員。","emoji":"🏃","distractors":["driver","farmer","clown"]},
  {"id":"spo-014","word":"ride","zh":"騎","topic":"sports","sentence":"I ride my bike to school.","sentence_zh":"我騎腳踏車上學。","emoji":"🚴","distractors":["drive","walk","climb"]},
- {"id":"spo-015","word":"roller skates","zh":"直排輪鞋","topic":"sports","sentence":"Her roller skates are pink.","sentence_zh":"她的直排輪鞋是粉紅色的。","emoji":"","distractors":["ice skates","helmet","ticket"]},
- {"id":"spo-016","word":"roller skating","zh":"溜直排輪","topic":"sports","sentence":"Roller skating is fun!","sentence_zh":"溜直排輪好好玩！","emoji":"","distractors":["ice skating","swimming","fishing"]},
+ {"id":"spo-015","word":"roller skates","zh":"直排輪鞋","topic":"sports","sentence":"Her roller skates are pink.","sentence_zh":"她的直排輪鞋是粉紅色的。","emoji":"🛼","distractors":["ice skates","helmet","ticket"]},
+ {"id":"spo-016","word":"roller skating","zh":"溜直排輪","topic":"sports","sentence":"Roller skating is fun!","sentence_zh":"溜直排輪好好玩！","emoji":"🛼","distractors":["ice skating","swimming","fishing"]},
  {"id":"spo-017","word":"sail","zh":"航行；開船","topic":"sports","sentence":"We sailed the boat on the lake.","sentence_zh":"我們在湖上開船。","emoji":"⛵","distractors":["swim","fish","ride"]},
  {"id":"spo-018","word":"score","zh":"得分","topic":"sports","sentence":"He scored two goals!","sentence_zh":"他踢進了兩球！","emoji":"🎯","distractors":["kick","catch","lose"]},
  {"id":"spo-019","word":"skate","zh":"溜冰","topic":"sports","sentence":"I can skate very quickly.","sentence_zh":"我溜冰溜得很快。","emoji":"⛸️","distractors":["swim","climb","dance"]},
@@ -1141,7 +1156,7 @@ const WORDS_ALL = [
  {"id":"wea-019","word":"rain","zh":"雨；下雨","topic":"weather_world","sentence":"Take an umbrella. It's raining.","sentence_zh":"帶把傘，下雨了。","emoji":"🌧️","distractors":["snow","wind","cloud"]},
  {"id":"wea-020","word":"rainbow","zh":"彩虹","topic":"weather_world","sentence":"Look! A rainbow after the rain!","sentence_zh":"你看！雨後出現彩虹！","emoji":"🌈","distractors":["cloud","sky","moon"]},
  {"id":"wea-021","word":"river","zh":"河","topic":"weather_world","sentence":"Fish swim in the river.","sentence_zh":"魚在河裡游。","emoji":"🏞️","distractors":["lake","waterfall","road"]},
- {"id":"wea-022","word":"rock","zh":"岩石","topic":"weather_world","sentence":"The snail is on a big rock.","sentence_zh":"蝸牛在一塊大岩石上。","emoji":"","distractors":["ground","mountain","leaf"]},
+ {"id":"wea-022","word":"rock","zh":"岩石","topic":"weather_world","sentence":"The snail is on a big rock.","sentence_zh":"蝸牛在一塊大岩石上。","emoji":"🪨","distractors":["ground","mountain","leaf"]},
  {"id":"wea-023","word":"sky","zh":"天空","topic":"weather_world","sentence":"The sky is blue today.","sentence_zh":"今天的天空很藍。","emoji":"🌌","distractors":["cloud","moon","ground"]},
  {"id":"wea-024","word":"snow","zh":"雪；下雪","topic":"weather_world","sentence":"We play in the snow in winter.","sentence_zh":"冬天我們在雪地裡玩。","emoji":"❄️","distractors":["rain","ice","wind"]},
  {"id":"wea-025","word":"sunny","zh":"晴朗的","topic":"weather_world","sentence":"It's sunny. Let's have a picnic!","sentence_zh":"天氣晴朗，我們去野餐吧！","emoji":"☀️","distractors":["cloudy","windy","wet"]},
@@ -1172,7 +1187,7 @@ const WORDS_ALL = [
  {"id":"pla-017","word":"go shopping","zh":"去購物","topic":"places_transport","sentence":"Let's go shopping at the supermarket.","sentence_zh":"我們去超市買東西吧。","emoji":"🛍️","distractors":["get on","dress up","get up"]},
  {"id":"pla-018","word":"holiday","zh":"假期","topic":"places_transport","sentence":"We went to the beach for our holiday.","sentence_zh":"我們假期去了海邊。","emoji":"🏖️","distractors":["trip","weekend","party"]},
  {"id":"pla-019","word":"library","zh":"圖書館","topic":"places_transport","sentence":"Be quiet in the library.","sentence_zh":"在圖書館要安靜。","emoji":"📚","distractors":["cinema","hospital","supermarket"]},
- {"id":"pla-020","word":"lift / elevator","zh":"電梯","topic":"places_transport","sentence":"Take the lift to the fourth floor.","sentence_zh":"搭電梯到四樓。","emoji":"","distractors":["stairs","seat","shower"]},
+ {"id":"pla-020","word":"lift / elevator","zh":"電梯","topic":"places_transport","sentence":"Take the lift to the fourth floor.","sentence_zh":"搭電梯到四樓。","emoji":"🛗","distractors":["stairs","seat","shower"]},
  {"id":"pla-021","word":"map","zh":"地圖","topic":"places_transport","sentence":"Look at the map to find the road.","sentence_zh":"看地圖找路。","emoji":"🗺️","distractors":["ticket","address","world"]},
  {"id":"pla-022","word":"market","zh":"市場","topic":"places_transport","sentence":"We buy vegetables at the market.","sentence_zh":"我們在市場買蔬菜。","emoji":"🍎","distractors":["supermarket","café","shop"]},
  {"id":"pla-023","word":"place","zh":"地方","topic":"places_transport","sentence":"This is a good place for a picnic.","sentence_zh":"這是野餐的好地方。","emoji":"📍","distractors":["centre","square","address"]},
@@ -1487,6 +1502,23 @@ const BG_STYLES = {
  bg_night:"radial-gradient(150% 95% at 50% 6%, rgba(170,160,255,.34), transparent 54%), radial-gradient(80% 42% at 50% 62%, rgba(160,120,255,.40), transparent 72%), linear-gradient(180deg,#080823 0%,#1a1550 40%,#33267a 54%,#4a2f86 58%,#2c2464 60%,#1c1548 82%,#0d0930 100%)"
 };
 
+/* ---------- 音訊設定（localStorage 持久化，獨立於存檔） ---------- */
+const AudioSettings = {
+  bgm: true, sfx: true, voice: true,
+  load(){
+    try{
+      const s = JSON.parse(localStorage.getItem("wa_audio_settings") || "{}");
+      if (typeof s.bgm === "boolean") this.bgm = s.bgm;
+      if (typeof s.sfx === "boolean") this.sfx = s.sfx;
+      if (typeof s.voice === "boolean") this.voice = s.voice;
+    }catch(e){}
+  },
+  save(){
+    try{ localStorage.setItem("wa_audio_settings", JSON.stringify({bgm:this.bgm, sfx:this.sfx, voice:this.voice})); }catch(e){}
+  }
+};
+AudioSettings.load();
+
 /* ---------- 8-bit 音效（Web Audio 合成，無版權音源） ---------- */
 let _actx = null;
 function actx(){
@@ -1495,6 +1527,7 @@ function actx(){
   return _actx;
 }
 function tone(freq, start, dur, type, vol){
+  if (!AudioSettings.sfx) return;
   const c = actx(); if (!c) return;
   const o = c.createOscillator(), g = c.createGain();
   o.type = type || "square"; o.frequency.value = freq;
@@ -1513,6 +1546,7 @@ function jingleVictory(){ /* DQ 風格過關小號角 */
 
 /* ---------- 語音 ---------- */
 function speak(text, rate){
+  if (!AudioSettings.voice) return;
   try{
     speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(text);
@@ -2481,6 +2515,34 @@ const Game = {
     this.switchScreen("title-screen");
   },
 
+  /* ---------- 音訊設定 ---------- */
+  openSettings(){
+    this.renderSettings();
+    document.getElementById("settings-overlay").style.display = "flex";
+  },
+  closeSettings(){
+    document.getElementById("settings-overlay").style.display = "none";
+  },
+  renderSettings(){
+    const rows = [
+      {key:"bgm", label:"🎵 背景音樂"},
+      {key:"sfx", label:"🔔 音效"},
+      {key:"voice", label:"🔊 單字發音"},
+    ];
+    document.getElementById("settings-rows").innerHTML = rows.map(r => `
+      <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,.06); border-radius:14px; padding:10px 16px;">
+        <span style="font-size:17px;">${r.label}</span>
+        <button class="btn small" style="min-height:38px; padding:6px 18px; margin:0;${AudioSettings[r.key] ? "" : "background:linear-gradient(180deg,#999,#666);box-shadow:none;color:#eee;"}" onclick="Game.toggleSetting('${r.key}')">${AudioSettings[r.key] ? "開" : "關"}</button>
+      </div>
+    `).join("");
+  },
+  toggleSetting(key){
+    AudioSettings[key] = !AudioSettings[key];
+    AudioSettings.save();
+    if (key === "bgm" && !AudioSettings.bgm) this.stopOverture();
+    this.renderSettings();
+  },
+
   /* ---------- 圖鑑（Phase 4：分區顯示） ---------- */
   showDex(){
     this.updateTopbar();
@@ -2662,6 +2724,7 @@ const Game = {
   _overtureAudio: null,
   playOverture(){
     this.stopOverture();
+    if (!AudioSettings.bgm) return;
     try{
       const audio = new Audio(STORY_MUSIC);
       audio.loop = true;

@@ -103,7 +103,7 @@
    "pos": "n",
    "sentence": "There is a fly in my soup!",
    "sentence_zh": "我的湯裡有一隻蒼蠅！",
-   "emoji": "",
+   "emoji": "🪰",
    "distractors": [
     "snail",
     "kitten",
@@ -1063,7 +1063,7 @@
    "pos": "n",
    "sentence": "My toothbrush is red.",
    "sentence_zh": "我的牙刷是紅色的。",
-   "emoji": "",
+   "emoji": "🪥",
    "distractors": [
     "toothpaste",
     "towel",
@@ -1798,7 +1798,7 @@
    "pos": "n",
    "sentence": "Her roller skates are pink.",
    "sentence_zh": "她的直排輪鞋是粉紅色的。",
-   "emoji": "",
+   "emoji": "🛼",
    "distractors": [
     "ice skates",
     "helmet",
@@ -1813,7 +1813,7 @@
    "pos": "n",
    "sentence": "Roller skating is fun!",
    "sentence_zh": "溜直排輪好好玩！",
-   "emoji": "",
+   "emoji": "🛼",
    "distractors": [
     "ice skating",
     "swimming",
@@ -2788,7 +2788,7 @@
    "pos": "n",
    "sentence": "The snail is on a big rock.",
    "sentence_zh": "蝸牛在一塊大岩石上。",
-   "emoji": "",
+   "emoji": "🪨",
    "distractors": [
     "ground",
     "mountain",
@@ -3253,7 +3253,7 @@
    "pos": "n",
    "sentence": "Take the lift to the fourth floor.",
    "sentence_zh": "搭電梯到四樓。",
-   "emoji": "",
+   "emoji": "🛗",
    "distractors": [
     "stairs",
     "seat",
